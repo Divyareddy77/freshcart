@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import './Nonveg.css';
+import { CartContext } from './contextapi/CartContext';
 interface nonVegItem{
   id : number
   name : string
@@ -7,30 +9,34 @@ interface nonVegItem{
   description : string
 }
 function Nonveg() {
+  const context = useContext(CartContext);
+  if (!context) return null;
+  const { addToCart } = context;
+  
   const nonVeg : nonVegItem[] =[
     {
-      id : 1,
+      id : 301,
       name : "Chicken",
       price : 800,
-      imageurl : "public/images/chicken.jpg",
+      imageurl : "/images/chicken.jpg",
       description : "Fresh skinless chicken"
     },
         {
-      id : 2,
+      id : 302,
       name : "Mutton",
       price : 800,
-      imageurl : "/images/mutton.jpg",
+      imageurl : "/images/mutton.jpg",        
       description : "Premium fresh mutton"
     },
         {
-      id : 3,
+      id : 303,
       name : "Fish",
       price : 800,
       imageurl : "/images/fish.jpg",
       description : "Fresh river fish"
     },
         {
-      id : 4,
+      id : 304,
       name : "Eggs",
       price : 800,
       imageurl : "/images/eggs.jpg",
@@ -39,11 +45,12 @@ function Nonveg() {
 
   ]
   let listItems = nonVeg.map((nonveg) =>
-  <li>
-    {nonveg.name}
+  <li key={nonveg.id}>
+        {nonveg.name}
         <img src={nonveg.imageurl} alt={nonveg.name} width={150} height={150} />
         Price: ₹{nonveg.price}
         {nonveg.description}
+        <button onClick={() => addToCart(nonveg)}>Add To Cart</button>
   </li>
   )
   return (
@@ -54,3 +61,7 @@ function Nonveg() {
 }
 
 export default Nonveg
+
+
+
+

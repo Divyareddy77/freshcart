@@ -1,0 +1,43 @@
+ol{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+    list-style:none;
+}
+
+li{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+li:hover{
+    transform:translateY(-8px);
+}
+
+li img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    margin:15px 0;
+    border-radius:15px;
+}
+
+li button{
+    margin-top:15px;
+    padding:12px 20px;
+    width:100%;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+li button:hover{
+    background:#1f8d39;
+}
