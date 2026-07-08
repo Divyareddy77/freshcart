@@ -61,9 +61,123 @@ function Veg() {
           imageurl: "/images/carrot.jpg",
           description: "Fresh carrots",
 
-        }
+        },
+       
+  {
+    id: 5,
+    name: "Cabbage",
+    price: 40,
+    description: "Fresh green cabbage",
+    imageurl: "/images/cabbage.jpg",
+  },
+  {
+    id: 6,
+    name: "Cauliflower",
+    price: 60,
+    description: "Farm fresh cauliflower",
+    imageurl: "/images/cauliflower.avif",
+  },
+  {
+    id: 7,
+    name: "Onion",
+    price: 35,
+    description: "Fresh red onions",
+    imageurl: "/images/onion.avif",
+  },
+  {
+    id: 8,
+    name: "Capsicum",
+    price: 90,
+    description: "Fresh green capsicum",
+    imageurl: "/images/capsicum.jpg",
+  },
+  {
+    id: 9,
+    name: "Beetroot",
+    price: 55,
+    description: "Healthy beetroot",
+    imageurl: "/images/beetroot.avif",
+  },
+  {
+    id: 10,
+    name: "Spinach",
+    price: 30,
+    description: "Fresh spinach leaves",
+    imageurl: "/images/spinach.avif",
+  },
+  {
+    id: 11,
+    name: "Cucumber",
+    price: 35,
+    description: "Cool fresh cucumbers",
+    imageurl: "/images/cucumber.avif",
+  },
+  {
+    id: 12,
+    name: "Brinjal",
+    price: 45,
+    description: "Fresh purple brinjal",
+    imageurl: "/images/brinjal.jpg",
+  },
+  {
+    id: 13,
+    name: "Bottle Gourd",
+    price: 40,
+    description: "Healthy bottle gourd",
+    imageurl: "/images/bottlegourd.jpg",
+  },
+  {
+    id: 14,
+    name: "Pumpkin",
+    price: 50,
+    description: "Fresh pumpkin",
+    imageurl: "/images/pumpkin.avif",
+  },
+  {
+    id: 15,
+    name: "Radish",
+    price: 30,
+    description: "Fresh white radish",
+    imageurl: "/images/raddish.jpg",
+  },
+  {
+    id: 16,
+    name: "Ladies Finger",
+    price: 60,
+    description: "Tender ladies finger",
+    imageurl: "/images/ladysfinger.jpg",
+  },
+  {
+    id: 17,
+    name: "Green Peas",
+    price: 90,
+    description: "Sweet green peas",
+    imageurl: "/images/greenpeas.avif",
+  },
+  {
+    id: 18,
+    name: "Sweet Corn",
+    price: 70,
+    description: "Fresh sweet corn",
+    imageurl: "/images/sweetcorn.avif",
+  },
+  {
+    id: 19,
+    name: "Beans",
+    price: 60,
+    description: "Fresh green beans",
+    imageurl: "/images/beans.avif",
+  },
+  {
+    id: 20,
+    name: "Mushroom",
+    price: 120,
+    description: "Organic mushrooms",
+    imageurl: "/images/mushrrom.avif",
+  },
+];
 
-      ];
+      
       let listItems = vegItems.map((veg) => ( 
       <li key ={veg.id}>
         {veg.name}

@@ -44,8 +44,25 @@ function Groceries() {
     imageurl: "/images/oil.jpg",
     description: "Refined sunflower oil",
   },
+  { id: 205, name: "Sugar", price: 55, description: "Premium sugar", imageurl: "/images/Sugar.avif" },
+  { id: 206, name: "Salt", price: 25, description: "Iodized salt", imageurl: "/images/Salt.avif" },
+  { id: 207, name: "Turmeric Powder", price: 45, description: "Pure turmeric powder", imageurl: "/images/Turmeric Powder.avif" },
+  { id: 208, name: "Red Chilli Powder", price: 80, description: "Spicy chilli powder", imageurl: "/images/Red Chilli Powder.avif" },
+  { id: 209, name: "Coriander Powder", price: 60, description: "Fresh coriander powder", imageurl: "/images/Coriander Powde.jpg" },
+  { id: 210, name: "Black Pepper", price: 120, description: "Whole black pepper", imageurl: "/images/Black Pepper.avif" },
+  { id: 211, name: "Jeera", price: 90, description: "Whole cumin seeds", imageurl: "/images/Jeera.jpg" },
+  { id: 212, name: "Mustard Seeds", price: 45, description: "Premium mustard seeds", imageurl: "/images/Mustard Seeds.avif" },
+  { id: 213, name: "Poha", price: 70, description: "Fresh poha", imageurl: "/images/Poha.jpg" },
+  { id: 214, name: "Rava", price: 60, description: "Fine rava", imageurl: "/images/rava.jpg" },
+  { id: 215, name: "Maida", price: 50, description: "Refined flour", imageurl: "/images/Maida.jpg" },
+  { id: 216, name: "Besan", price: 90, description: "Gram flour", imageurl: "/images/Besan.jpg" },
+  { id: 217, name: "Green Gram", price: 130, description: "Protein-rich green gram", imageurl: "/images/Green Gram.avif" },
+  { id: 218, name: "Black Gram", price: 140, description: "Premium black gram", imageurl: "/images/Black Gram.avif" },
+  { id: 219, name: "Chickpeas", price: 110, description: "Healthy chickpeas", imageurl: "/images/Chickpeas.avif" },
+  { id: 220, name: "Tea Powder", price: 220, description: "Premium tea powder", imageurl: "/images/Tea Powder.jpg" },
+];
 
-]
+
 let listItems = groceryItems.map((grocery) =>
   <li key={grocery.id}>
     {grocery.name}
