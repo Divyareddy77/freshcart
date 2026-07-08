@@ -9,7 +9,6 @@ import {
   FaPlus,
   FaMinus,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import { CartContext } from "./contextapi/CartContext";
 import { coupons } from "./data/coupons";
 
