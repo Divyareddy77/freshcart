@@ -1,4 +1,4 @@
-import { registerUser } from "../apis/AuthApi";
+/* import { registerUser } from "../apis/AuthApi";
 import type { RegisterRequest } from "../interfaces/RegisterRequest";
 
 export const servieRegister = async (data: RegisterRequest) => {
@@ -6,3 +6,4 @@ export const servieRegister = async (data: RegisterRequest) => {
 
   return response.data;
 };
+ */

@@ -1,5 +1,5 @@
-export interface LoginResponse {
+/* export interface LoginResponse {
     success: boolean;
     message: string;
     token: string;
-}
+} */

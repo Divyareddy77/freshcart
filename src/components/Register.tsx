@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import { useForm } from "react-hook-form";
 import type { RegisterRequest } from "../interfaces/RegisterRequest";
 import { registerUser } from "../apis/AuthApi";
@@ -57,3 +57,4 @@ function Register() {
 }
 
 export default Register;
+ */

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Veg from './Veg';
 import Nonveg from './Nonveg';
@@ -11,10 +11,11 @@ import './App.css';
 
 import { FcHome } from 'react-icons/fc';
 import { FaFish, FaLeaf } from 'react-icons/fa';
-import Register from './components/Register';
+//import Register from './components/Register';
 import { CartContext } from './contextapi/CartContext';
 import Cart from './Cart';
-import Login from './components/Login';
+
+//import Login from './components/Login';
 
 function App() {
   const { cart } = useContext(CartContext);
@@ -86,8 +87,8 @@ function App() {
             <Route path="/Milk" element={<Milk />} />
             <Route path="/Groceries" element={<Groceries />} />
             <Route path="/Cart" element={<Cart />} />
-            <Route path="/Register" element ={<Register/>}/>
-            <Route path="/Login" element={<Login />}/>
+            {/* <Route path="/Register" element ={<Register/>}/>
+            <Route path="/Login" element={<Login />}/> */}
           </Routes>
         </div>
 

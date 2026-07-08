@@ -1,4 +1,4 @@
-import { loginUser } from "../apis/AuthApi";
+/* import { loginUser } from "../apis/AuthApi";
 import type { LoginRequest } from "../interfaces/LoginRequest";
 
 export const serviceLogin = async (
@@ -8,4 +8,4 @@ export const serviceLogin = async (
     const response = await loginUser(data);
 
     return response.data;
-};
+}; */

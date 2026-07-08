@@ -1,4 +1,4 @@
-import axios from "axios";
+/* import axios from "axios";
 import type { LoginRequest } from "../interfaces/LoginRequest";
 import type { RegisterRequest } from "../interfaces/RegisterRequest";
 import axiosInstance from "./AxiosConfig";
@@ -11,4 +11,4 @@ export const loginUser = (data: LoginRequest) => {
         "http://localhost:8080/api/customers/login",
         data
     );
-};
+}; */
