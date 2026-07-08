@@ -54,7 +54,7 @@ function Cart() {
   const discount = (grandTotal * couponPercent) / 100;
   const finalAmount = grandTotal - discount;
 
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
