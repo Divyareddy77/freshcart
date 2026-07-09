@@ -1,6 +1,5 @@
 import  { useContext } from 'react'
 
-import './Groceries.css';
 import { CartContext } from './contextapi/CartContext';
 interface GroceryItem {
   id: number;
@@ -63,16 +62,40 @@ function Groceries() {
 ];
 
 
-let listItems = groceryItems.map((grocery) =>
-  <li key={grocery.id}>
-    {grocery.name}
-        <img src={grocery.imageurl} alt={grocery.name} width={150} height={150} />
-        Price: ₹{grocery.price}
-        {grocery.description}
-        <button onClick={() => addToCart(grocery)}>Add To Cart</button>
+let listItems = groceryItems.map((grocery) => (
+  <li
+    key={grocery.id}
+    className="bg-white rounded-3xl shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-all duration-300"
+  >
+    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+      {grocery.name}
+    </h2>
 
+    <img
+      src={grocery.imageurl}
+      alt={grocery.name}
+      className="w-60 h-60 object-cover rounded-2xl mb-5"
+    />
+
+    <div className="space-y-2 mb-5">
+      <p className="text-2xl font-bold text-green-600">
+        ₹{grocery.price}
+      </p>
+
+      <p className="text-gray-600 text-lg">
+        {grocery.description}
+      </p>
+    </div>
+
+    <button
+      onClick={() => addToCart(grocery)}
+      className="w-full bg-yellow-500 hover:bg-yellow-600 text-white text-xl font-semibold py-3 rounded-xl transition-all duration-300"
+    >
+      Add To Cart
+    </button>
   </li>
- )
+));
+ 
   return (
     <div>
       <ol>{listItems}</ol>

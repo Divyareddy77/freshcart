@@ -1,6 +1,7 @@
 import  { useContext } from 'react'
-import './Milk.css';
+
 import { CartContext } from './contextapi/CartContext';
+import { FaStar } from 'react-icons/fa';
 interface MilkItem {
   id: number;
   name: string;
@@ -157,20 +158,115 @@ function Milk() {
   },
 ];
 
+let listItems = milkItems.map((milk) => (
+  <li
+    key={milk.id}
+    className="
+group
+relative
+bg-white
+rounded-3xl
+border
+border-sky-100
+shadow-lg
+overflow-hidden
+p-6
+flex
+flex-col
+items-center
+transition-all
+duration-500
+hover:-translate-y-3
+hover:shadow-2xl
+hover:border-sky-400
+"
+  >
+    <span className="absolute top-4 left-4 bg-sky-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
+    Fresh
+</span>
+    <h2 className="
+text-2xl
+font-black
+text-gray-800
+mb-4
+group-hover:text-sky-600
+transition
+">
+      {milk.name}
+    </h2>
 
- let listItems = milkItems.map((milk) =>
-  <li key={milk.id}>
-    {milk.name}
-        <img src={milk.imageurl} alt={milk.name} width={150} height={150} />
-        Price: ₹{milk.price}
-        {milk.description}
-        <button onClick={() => addToCart(milk)}>Add To Cart</button>
+    <div className="w-56 h-56 bg-sky-50 rounded-2xl flex items-center justify-center mb-5 shadow-inner">
 
+    <img
+        src={milk.imageurl}
+        alt={milk.name}
+        className="max-w-48 max-h-48 object-contain transition duration-500 group-hover:scale-110"
+    />
+
+</div>
+<div className="flex justify-center gap-1 text-yellow-400 mb-3">
+    <FaStar />
+    <FaStar />
+    <FaStar />
+    <FaStar />
+    <FaStar />
+</div>
+
+    <div className="space-y-2 mb-5">
+      <p className="text-2xl text-center font-black text-sky-500">
+    ₹{milk.price}
+</p>
+      <p className="text-gray-500 text-sm leading-6">
+    {milk.description}
+</p>
+    </div>
+
+    <button
+    onClick={() => addToCart(milk)}
+    className="
+    mt-auto
+    w-full
+    bg-gradient-to-r
+    from-sky-300
+    to-blue-600
+    hover:from-sky-600
+    hover:to-blue-700
+    text-white
+    font-bold
+    text-lg
+    py-3
+    rounded-xl
+    transition-all
+    duration-300
+    hover:scale-105
+    shadow-lg
+    "
+>
+    🛒 Add To Cart
+</button>
   </li>
- )
+));
+ 
   return (
     <>
-      <ol>{listItems}</ol>
+    
+  <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-blue-100 py-10">
+    <div className="max-w-7xl mx-auto mb-12 rounded-3xl bg-gradient-to-r from-sky-600 via-blue-500 to-cyan-500 text-white shadow-2xl px-10 py-12 text-center">
+
+    <h1 className="text-5xl font-black tracking-wide">
+        🥛 Fresh Dairy Collection
+    </h1>
+
+    <p className="mt-4 text-xl text-blue-100">
+        Pure • Fresh • Healthy • Delivered Daily
+    </p>
+
+</div>
+     <ol className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-6">
+    {listItems}
+</ol>
+  </div>
+
     </>
   )
 }

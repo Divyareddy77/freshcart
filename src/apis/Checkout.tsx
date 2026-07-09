@@ -1,6 +1,8 @@
+
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CartContext } from "../contextapi/CartContext";
+import QRCode from "react-qr-code";
 import {
   FaMapMarkerAlt,
   FaUser,
@@ -10,6 +12,8 @@ import {
   FaTruck,
   FaCheckCircle,
 } from "react-icons/fa";
+import { sendOrderEmail } from "../services/EmailService";
+import { getAddressFromLocation } from "./Locationapi";
 
 function Checkout() {
   const { cart, clearCart } = useContext(CartContext);
@@ -27,8 +31,9 @@ function Checkout() {
   const [mobile, setMobile] = useState("");
   const [address, setAddress] = useState("");
   const [paymentMode, setPaymentMode] = useState("");
+  const [email,setEmail] = useState("")
 
-  const placeOrder = () => {
+  const placeOrder = async () => {
     if (!name || !mobile || !address) {
       alert("Please fill all address details.");
       return;
@@ -39,9 +44,56 @@ function Checkout() {
     }
 
     alert("Order Placed Successfully!");
+     const order = {
+      order_id: Math.floor(Math.random() * 100000),
+      name: name,
+      email: email, // Recipient email
+	  
+      orders: cart.map((item) => ({
+        name: item.name,
+        units: item.quantity,
+        price: item.price,
+        image_url: item.imageurl,
+      })),
+
+      cost: {
+        shipping: 100,
+        tax: 100,
+        coupon: discount,
+        total: finalAmount,
+      },
+    };
+    
+    await sendOrderEmail(order);
+
+
     clearCart();
     navigate("/cart");
   };
+ const getCurrentLocation = () => {
+  if (!navigator.geolocation) {
+    alert("Geolocation is not supported.");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    async (position) => {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+
+      try {
+        const data = await getAddressFromLocation(lat, lng);
+
+        setAddress(data.display_name);
+      } catch (error) {
+        alert("Unable to fetch address.");
+      }
+    },
+    (error) => {
+      alert(error.message);
+    }
+  );
+};
 
 
 
@@ -86,6 +138,26 @@ function Checkout() {
                   />
                 </div>
               </div>
+              <div>
+                <label className="font-semibold">Email</label>
+                <div className="flex items-center border rounded-lg mt-2">
+                  <FaPhone className="mx-3 text-gray-500"/>
+                  <input
+                    className="w-full p-3 outline-none"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
+                    placeholder="Enter Email"
+                  />
+                </div>
+              </div>
+              <button
+    type="button"
+    onClick={getCurrentLocation}
+    className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg flex items-center gap-2"
+  >
+    <FaMapMarkerAlt />
+    Use Current Location
+  </button>
     
               <div>
                 <label className="font-semibold">Address</label>
@@ -122,10 +194,13 @@ function Checkout() {
               <FaTruck className="text-green-600"/> Cash On Delivery
             </label>
 
-            {paymentMode==="UPI" && (
-              <div className="mt-6 text-center bg-blue-50 rounded-xl p-5">
-                <img src="/images/qr.png" className="w-56 mx-auto"/>
-                <p className="mt-3">Scan using PhonePe / GPay / Paytm</p>
+            {paymentMode === "UPI" && (
+              <div className="qr-section">
+                <h4>Scan UPI QR to Pay ₹{finalAmount.toFixed(2)}</h4>
+                <QRCode
+                  value={`upi://pay?pa=9390591458@ybl&pn=ArunMart&am=${finalAmount.toFixed(2)}&cu=INR`}
+                />
+                <p>UPI ID: 9390591458@ybl</p>
               </div>
             )}
 

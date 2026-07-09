@@ -52,17 +52,20 @@ function Cart() {
   return (
     <div className="min-h-screen w-full bg-[#f4f6fb] px-6 py-12 md:px-12">
       <div className="max-w-[1600px] mx-auto">
-        <h1 className="text-3xl font-extrabold text-gray-900 mb-10 flex items-center gap-3">
-          <span>🛒</span> My Cart ({cart.length} items)
-        </h1>
+        <h1 className="text-3xl font-extrabold text-gray-900 text-center mt- mb-20">
+  🛒 My Cart ({cart.length} items)
+</h1>
+        
 
         {cart.length === 0 ? (
-          <div className="bg-white p-16 rounded-3xl shadow-sm text-center max-w-md mx-auto mt-10 border border-gray-100">
-            <h2 className="text-2xl text-gray-700 font-bold mb-2">
-              Your Cart is Empty 😔
-            </h2>
-            <p className="text-gray-500">Add items to get started!</p>
-          </div>
+          <div className="flex items-center justify-center min-h-[70vh]">
+  <div className="bg-white p-16 rounded-3xl shadow-sm text-center max-w-md w-full border border-gray-100">
+    <h2 className="text-2xl text-gray-700 font-bold mb-2">
+      Your Cart is Empty 😔
+    </h2>
+    <p className="text-gray-500">Add items to get started!</p>
+  </div>
+</div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             

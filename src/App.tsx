@@ -7,14 +7,14 @@ import Groceries from './Groceries';
 
 import Home from './Home';
 
-import './App.css';
 
-import { FcHome } from 'react-icons/fc';
-import { FaFish, FaLeaf } from 'react-icons/fa';
+
 //import Register from './components/Register';
 import { CartContext } from './contextapi/CartContext';
 import Cart from './Cart';
 import Checkout from './apis/Checkout';
+import Navbar from './components/Navbar';
+import { ToastContainer } from 'react-toastify';
 
 //import Login from './components/Login';
 
@@ -23,8 +23,9 @@ function App() {
   return (
     
       <BrowserRouter>
+      <Navbar/>
 
-        <nav className="navbar flex justify-center items-center flex-wrap gap-5 px-6 py-4 shadow-lg">
+        {/* <nav className="navbar flex justify-center items-center flex-wrap gap-5 px-6 py-4 shadow-lg">
           <Link
             to="/"
             className="nav-link flex items-center gap-2 text-lg font-semibold"
@@ -69,7 +70,7 @@ function App() {
           >
             🛍 Cart{cart.length}
           </Link>
-          {/* <Link to="/Register"
+          <Link to="/Register"
           className="inline-block rounded-lg bg-blue-600 px-6 py-2.5 text-white font-semibold shadow-md transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-lg active:scale-95"
           >
             Register
@@ -77,8 +78,8 @@ function App() {
           <Link to="/Login" className="inline-block rounded-lg bg-green-600 px-6 py-2 text-white"
           >
             Login
-          </Link> */}
-        </nav>
+          </Link>
+        </nav> */}
 
         <div className="container max-w-7xl mx-auto p-5">
           <Routes>
@@ -92,6 +93,17 @@ function App() {
             {/* <Route path="/Register" element ={<Register/>}/>
             <Route path="/Login" element={<Login />}/> */}
           </Routes>
+          <ToastContainer
+  position="top-right"
+  autoClose={2000}
+  hideProgressBar={false}
+  newestOnTop
+  closeOnClick
+  pauseOnHover={false}
+  pauseOnFocusLoss={false}
+  draggable
+  theme="colored"
+/>
 
         </div>
 

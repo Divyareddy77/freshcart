@@ -1,5 +1,5 @@
 import  { useContext } from 'react'
-import './Nonveg.css';
+
 import { CartContext } from './contextapi/CartContext';
 interface nonVegItem{
   id : number
@@ -62,15 +62,39 @@ function Nonveg() {
 ];
 
   
-  let listItems = nonVeg.map((nonveg) =>
-  <li key={nonveg.id}>
-        {nonveg.name}
-        <img src={nonveg.imageurl} alt={nonveg.name} width={150} height={150} />
-        Price: ₹{nonveg.price}
+ let listItems = nonVeg.map((nonveg) => (
+  <li
+    key={nonveg.id}
+    className="bg-white rounded-3xl shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-all duration-300"
+  >
+    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+      {nonveg.name}
+    </h2>
+
+    <img
+      src={nonveg.imageurl}
+      alt={nonveg.name}
+      className="w-60 h-60 object-cover rounded-2xl mb-5"
+    />
+
+    <div className="space-y-2 mb-5">
+      <p className="text-2xl font-bold text-green-600">
+        ₹{nonveg.price}
+      </p>
+
+      <p className="text-gray-600 text-lg">
         {nonveg.description}
-        <button onClick={() => addToCart(nonveg)}>Add To Cart</button>
+      </p>
+    </div>
+
+    <button
+      onClick={() => addToCart(nonveg)}
+      className="w-full bg-yellow-500 hover:bg-yellow-600 text-white text-xl font-semibold py-3 rounded-xl transition-all duration-300"
+    >
+      Add To Cart
+    </button>
   </li>
-  )
+));
   return (
     <>
       <ol>{listItems}</ol>
