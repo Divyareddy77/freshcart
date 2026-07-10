@@ -1,6 +1,7 @@
 import  { useContext } from 'react'
 
 import { CartContext } from './contextapi/CartContext';
+import { FaStar } from 'react-icons/fa';
 interface GroceryItem {
   id: number;
   name: string;
@@ -65,31 +66,94 @@ function Groceries() {
 let listItems = groceryItems.map((grocery) => (
   <li
     key={grocery.id}
-    className="bg-white rounded-3xl shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-all duration-300"
+    className="
+group
+relative
+bg-white
+rounded-3xl
+border
+border-amber-100
+shadow-lg
+overflow-hidden
+p-6
+flex
+flex-col
+items-center
+transition-all
+duration-500
+hover:-translate-y-3
+hover:shadow-2xl
+hover:border-orange-300
+"
   >
-    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+    <h2 className="
+text-2xl
+font-black
+text-gray-800
+mb-4
+tracking-wide
+group-hover:text-orange-600
+transition
+">
       {grocery.name}
     </h2>
 
-    <img
-      src={grocery.imageurl}
-      alt={grocery.name}
-      className="w-60 h-60 object-cover rounded-2xl mb-5"
-    />
+    <div className="w-56 h-56 overflow-hidden rounded-2xl mb-5">
+  <img
+    src={grocery.imageurl}
+    alt={grocery.name}
+    className="w-full h-full object-cover transition duration-300 hover:scale-105"
+  />
+</div>
+<div className="flex justify-center gap-1 text-yellow-400 mb-3">
+
+    <FaStar />
+    <FaStar />
+    <FaStar />
+    <FaStar />
+    <FaStar />
+
+</div>
 
     <div className="space-y-2 mb-5">
-      <p className="text-2xl font-bold text-green-600">
+      <p className="
+text-4xl
+font-black
+text-orange-400
+">
         ₹{grocery.price}
       </p>
 
-      <p className="text-gray-600 text-lg">
+      <p className="
+text-sm
+text-gray-500
+leading-6
+">
         {grocery.description}
       </p>
     </div>
 
     <button
       onClick={() => addToCart(grocery)}
-      className="w-full bg-yellow-500 hover:bg-yellow-600 text-white text-xl font-semibold py-3 rounded-xl transition-all duration-300"
+      className="
+mt-auto
+w-full
+bg-gradient-to-r
+from-orange-500
+to-amber-500
+hover:from-orange-600
+hover:to-amber-600
+text-white
+font-bold
+text-lg
+py-2.5
+rounded-xl
+transition-all
+duration-300
+hover:scale-105
+hover:shadow-xl
+active:scale-95
+"
     >
       Add To Cart
     </button>
@@ -97,8 +161,21 @@ let listItems = groceryItems.map((grocery) => (
 ));
  
   return (
-    <div>
-      <ol>{listItems}</ol>
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-100 py-10">
+      <div className="max-w-7xl mx-auto mb-12 rounded-3xl bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-500 text-white shadow-2xl px-10 py-12 text-center">
+
+    <h1 className="text-5xl font-black tracking-wide">
+        🛒 Grocery Essentials
+    </h1>
+
+    <p className="mt-4 text-xl text-orange-100">
+        Rice • Flour • Spices • Daily Essentials
+    </p>
+
+</div>
+      <ol className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-6">
+    {listItems}
+</ol>
     </div>
   )
 }

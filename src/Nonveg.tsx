@@ -1,6 +1,7 @@
 import  { useContext } from 'react'
 
 import { CartContext } from './contextapi/CartContext';
+import { FaStar } from 'react-icons/fa';
 interface nonVegItem{
   id : number
   name : string
@@ -65,39 +66,111 @@ function Nonveg() {
  let listItems = nonVeg.map((nonveg) => (
   <li
     key={nonveg.id}
-    className="bg-white rounded-3xl shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-all duration-300"
+    className="
+group
+relative
+bg-white
+rounded-3xl
+shadow-lg
+p-6
+text-center
+hover:-translate-y-2
+hover:shadow-2xl
+transition-all
+duration-500
+border
+border-red-100
+hover:border-red-400
+"
   >
-    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+    <h2 className="
+text-3xl
+font-extrabold
+text-gray-900
+tracking-wide
+mb-3
+group-hover:text-red-600
+transition
+">
       {nonveg.name}
     </h2>
+    <span className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
+  Fresh
+</span>
 
+    <div className="h-56 w-full bg-red-50 rounded-2xl overflow-hidden mb-5">
     <img
-      src={nonveg.imageurl}
-      alt={nonveg.name}
-      className="w-60 h-60 object-cover rounded-2xl mb-5"
+        src={nonveg.imageurl}
+        alt={nonveg.name}
+        className="
+w-full
+h-full
+rounded-xl
+object-cover
+transition
+duration-500
+group-hover:scale-110"
     />
+</div>
+  <div className="flex justify-center gap-1 text-yellow-400 mt-4 mb-4">
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+</div>
+
+
 
     <div className="space-y-2 mb-5">
-      <p className="text-2xl font-bold text-green-600">
-        ₹{nonveg.price}
-      </p>
+      <p className="text-2xl font-black text-red-600 tracking-wide">
+    ₹{nonveg.price}
+</p>
 
-      <p className="text-gray-600 text-lg">
+      <p className="
+text-gray-500
+leading-6
+">
         {nonveg.description}
       </p>
     </div>
 
     <button
-      onClick={() => addToCart(nonveg)}
-      className="w-full bg-yellow-500 hover:bg-yellow-600 text-white text-xl font-semibold py-3 rounded-xl transition-all duration-300"
-    >
-      Add To Cart
-    </button>
+  onClick={() => addToCart(nonveg)}
+  className="
+w-full
+py-2.5
+rounded-xl
+font-bold
+text-white
+bg-gradient-to-r
+from-red-600
+to-orange-500
+hover:from-red-700
+hover:to-orange-600
+transition
+duration-300
+shadow-lg
+"
+>
+  🛒 Add To Cart
+</button>
   </li>
 ));
   return (
     <>
-      <ol>{listItems}</ol>
+    <div className="bg-gradient-to-r from-red-700 via-rose-600 to-orange-500 rounded-3xl p-10 mb-10 text-center text-white shadow-2xl">
+  <h1 className="text-5xl font-black">
+    🍗 Premium Non-Veg Collection
+  </h1>
+
+  <p className="mt-4 text-lg text-red-100">
+    Fresh • Hygienic • Protein Rich • Delivered Chilled
+  </p>
+</div>
+      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
+  {listItems}
+</ol>
     </>
   )
 }

@@ -197,11 +197,13 @@ transition
 
     <div className="w-56 h-56 bg-sky-50 rounded-2xl flex items-center justify-center mb-5 shadow-inner">
 
-    <img
-        src={milk.imageurl}
-        alt={milk.name}
-        className="max-w-48 max-h-48 object-contain transition duration-500 group-hover:scale-110"
-    />
+    <div className="w-full h-60 rounded-2xl overflow-hidden bg-gray-100 mb-5">
+  <img
+    src={milk.imageurl}
+    alt={milk.name}
+    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+  />
+</div>
 
 </div>
 <div className="flex justify-center gap-1 text-yellow-400 mb-3">
@@ -234,7 +236,7 @@ transition
     text-white
     font-bold
     text-lg
-    py-3
+    py-2.5
     rounded-xl
     transition-all
     duration-300

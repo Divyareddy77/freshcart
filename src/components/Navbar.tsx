@@ -56,7 +56,7 @@ function Navbar() {
               Vegetables
             </NavLink>
 
-            <NavLink to="/Fruit" className={navLinkStyle}>
+            <NavLink to="/Fruits" className={navLinkStyle}>
               Fruits
             </NavLink>
 
@@ -158,7 +158,7 @@ function Navbar() {
               </NavLink>
 
               <NavLink
-                to="/Fruit"
+                to="/Fruits"
                 onClick={() => setMenuOpen(false)}
                 className={navLinkStyle}
               >

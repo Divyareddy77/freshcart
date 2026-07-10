@@ -15,6 +15,7 @@ import Cart from './Cart';
 import Checkout from './apis/Checkout';
 import Navbar from './components/Navbar';
 import { ToastContainer } from 'react-toastify';
+import Fruits from './Fruits';
 
 //import Login from './components/Login';
 
@@ -88,6 +89,7 @@ function App() {
             <Route path="/Nonveg" element={<Nonveg />} />
             <Route path="/Milk" element={<Milk />} />
             <Route path="/Groceries" element={<Groceries />} />
+            <Route path="/Fruits" element={<Fruits />} />
             <Route path="/Cart" element={<Cart />} />
             <Route path='/Checkout' element={<Checkout/>}/>
             {/* <Route path="/Register" element ={<Register/>}/>

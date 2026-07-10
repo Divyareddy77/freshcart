@@ -230,7 +230,7 @@ leading-6">
     toast.success(`${veg.name} added to cart 🛒`,{autoClose : 2000});
     
   }}
-  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl font-semibold py-3 rounded-xl transition duration-300 hover:scale-105 shadow-lg">
+  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl font-semibold py-2.5 rounded-xl transition duration-300 hover:scale-105 shadow-lg">
   Add To Cart
 </button>
   </li>
