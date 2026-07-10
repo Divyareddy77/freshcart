@@ -2,6 +2,7 @@
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CartContext } from "../contextapi/CartContext";
+import Swal from "sweetalert2";
 import QRCode from "react-qr-code";
 import {
   FaMapMarkerAlt,
@@ -15,6 +16,7 @@ import {
 } from "react-icons/fa";
 import { sendOrderEmail } from "../services/EmailService";
 import { getAddressFromLocation } from "./Locationapi";
+import { OrderContext } from "../contextapi/OrderContext";
 
 function Checkout() {
   const { cart, clearCart } = useContext(CartContext);
@@ -33,6 +35,7 @@ function Checkout() {
   const [address, setAddress] = useState("");
   const [paymentMode, setPaymentMode] = useState("");
   const [email,setEmail] = useState("")
+  const {addOrder}=useContext(OrderContext)
 
   const placeOrder = async () => {
     if (!name || !mobile || !address) {
@@ -44,7 +47,32 @@ function Checkout() {
       return;
     }
 
-    alert("Order Placed Successfully!");
+    Swal.fire({
+  icon: "success",
+  title: "✅ Order Placed!",
+  text: `Your order has been placed successfully.\nOrder ID: ${12345}`,
+
+  showConfirmButton: true,
+  confirmButtonText: "Track Order",
+  confirmButtonColor: "#2563eb",
+
+  showCancelButton: true,
+  cancelButtonText: "Close/Cancel",
+  cancelButtonColor: "#ef4444",
+
+  timer: 10000,
+  timerProgressBar: true,
+}).then((result) => {
+  // If user clicks "Track Order"
+  if (result.isConfirmed) {
+    navigate("/orders");
+  }
+
+  // If timer completes automatically
+  if (result.dismiss === Swal.DismissReason.timer) {
+    navigate("/orders");
+  }
+});
      const order = {
       order_id: Math.floor(Math.random() * 100000),
       name: name,
@@ -68,8 +96,37 @@ function Checkout() {
     await sendOrderEmail(order);
 
 
+    const orderData = {
+      orderNumber: Math.floor(Math.random() * 100000),
+
+      customerName: name,
+
+      mobile: mobile,
+
+      email: email,
+
+      address: address,
+
+      paymentMode: paymentMode,
+
+      grandTotal: grandTotal,
+
+      discount: discount,
+
+      finalAmount: finalAmount,
+
+      orderDate: new Date().toLocaleString(),
+
+      status: "PLACED",
+
+      items: [...cart],
+    };
+
+    addOrder(orderData);
+
     clearCart();
-    navigate("/cart");
+
+    //navigate("/orders");
   };
  const getCurrentLocation = () => {
   if (!navigator.geolocation) {

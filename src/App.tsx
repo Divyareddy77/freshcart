@@ -16,6 +16,7 @@ import Checkout from './apis/Checkout';
 import Navbar from './components/Navbar';
 import { ToastContainer } from 'react-toastify';
 import Fruits from './Fruits';
+import Orders from './components/Order';
 
 //import Login from './components/Login';
 
@@ -92,6 +93,7 @@ function App() {
             <Route path="/Fruits" element={<Fruits />} />
             <Route path="/Cart" element={<Cart />} />
             <Route path='/Checkout' element={<Checkout/>}/>
+            <Route path='/Orders' element={<Orders/>}/>
             {/* <Route path="/Register" element ={<Register/>}/>
             <Route path="/Login" element={<Login />}/> */}
           </Routes>

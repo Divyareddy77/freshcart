@@ -149,6 +149,15 @@ hover:scale-105
 }>
               Non-Veg
             </NavLink>
+            <NavLink to="/Orders" className={({ isActive }) =>
+  `px-5 py-2 rounded-xl transition-all duration-300 font-semibold ${
+    isActive
+      ? "bg-green-500 text-white shadow-lg"
+      : "text-gray-700 hover:bg-green-100 hover:text-green-700"
+  }`
+}>
+              Orders
+            </NavLink>
 
           </div>
 
