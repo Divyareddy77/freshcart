@@ -2,6 +2,7 @@ import  { useContext } from 'react'
 
 import { CartContext } from './contextapi/CartContext';
 import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 interface nonVegItem{
   id : number
   name : string
@@ -136,22 +137,36 @@ leading-6
     </div>
 
     <button
-  onClick={() => addToCart(nonveg)}
+  onClick={() => {
+    addToCart(nonveg);
+
+    toast.success(`${nonveg.name} added to cart 🛒`, {
+      autoClose: 2000,
+      position: "top-right",
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
+  }}
   className="
-w-full
-py-2.5
-rounded-xl
-font-bold
-text-white
-bg-gradient-to-r
-from-red-600
-to-orange-500
-hover:from-red-700
-hover:to-orange-600
-transition
-duration-300
-shadow-lg
-"
+    w-full
+    py-2.5
+    rounded-xl
+    font-bold
+    text-white
+    bg-gradient-to-r
+    from-red-600
+    to-orange-500
+    hover:from-red-700
+    hover:to-orange-600
+    transition
+    duration-300
+    shadow-lg
+    hover:scale-105
+    active:scale-95
+  "
 >
   🛒 Add To Cart
 </button>

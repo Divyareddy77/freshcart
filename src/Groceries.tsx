@@ -2,6 +2,7 @@ import  { useContext } from 'react'
 
 import { CartContext } from './contextapi/CartContext';
 import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 interface GroceryItem {
   id: number;
   name: string;
@@ -134,29 +135,40 @@ leading-6
     </div>
 
     <button
-      onClick={() => addToCart(grocery)}
-      className="
-mt-auto
-w-full
-bg-gradient-to-r
-from-orange-500
-to-amber-500
-hover:from-orange-600
-hover:to-amber-600
-text-white
-font-bold
-text-lg
-py-2.5
-rounded-xl
-transition-all
-duration-300
-hover:scale-105
-hover:shadow-xl
-active:scale-95
-"
-    >
-      Add To Cart
-    </button>
+  onClick={() => {
+    addToCart(grocery);
+    toast.success(`${grocery.name} added to cart 🛒`, {
+      autoClose: 2000,
+      position: "top-right",
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
+  }}
+  className="
+    mt-auto
+    w-full
+    bg-gradient-to-r
+    from-orange-500
+    to-amber-500
+    hover:from-orange-600
+    hover:to-amber-600
+    text-white
+    font-bold
+    text-lg
+    py-2.5
+    rounded-xl
+    transition-all
+    duration-300
+    hover:scale-105
+    hover:shadow-xl
+    active:scale-95
+  "
+>
+  🛒 Add To Cart
+</button>
   </li>
 ));
  

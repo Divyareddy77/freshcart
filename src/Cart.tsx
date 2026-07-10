@@ -50,16 +50,19 @@ function Cart() {
   let navigate = useNavigate();
 
   return (
-    <div className="min-h-screen w-full bg-[#f4f6fb] px-6 py-12 md:px-12">
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-white to-emerald-50 px-8 py-10">
       <div className="max-w-[1600px] mx-auto">
-        <h1 className="text-3xl font-extrabold text-gray-900 text-center mt- mb-20">
+        <h1 className="text-5xl font-black text-center mb-14 bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent">
   🛒 My Cart ({cart.length} items)
 </h1>
         
 
         {cart.length === 0 ? (
           <div className="flex items-center justify-center min-h-[70vh]">
-  <div className="bg-white p-16 rounded-3xl shadow-sm text-center max-w-md w-full border border-gray-100">
+  <div className="bg-gradient-to-br
+from-white
+to-emerald-50 p-16 rounded-3xl shadow-sm text-center max-w-md w-full border border-gray-100 shadow-xl
+rounded-[30px]">
     <h2 className="text-2xl text-gray-700 font-bold mb-2">
       Your Cart is Empty 😔
     </h2>
@@ -74,20 +77,64 @@ function Cart() {
               {cart.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white rounded-3xl border border-gray-100 shadow-sm px-8 py-8 min-h-[160px] flex flex-col sm:flex-row items-center justify-between gap-8 transition-all duration-200 hover:shadow-md"
+                  className="
+group
+bg-white
+rounded-[30px]
+border
+border-gray-100
+shadow-lg
+hover:shadow-2xl
+hover:-translate-y-1
+transition-all
+duration-300
+px-8
+py-8
+flex
+flex-col
+sm:flex-row
+items-center
+justify-between
+gap-8
+"
                 >
                   {/* Image */}
-                  <div className="w-28 h-28 flex-shrink-0 bg-gray-50 rounded-2xl p-3 border border-gray-100 flex items-center justify-center">
+                  <div className="
+w-32
+h-32
+bg-gradient-to-br
+from-gray-50
+to-white
+rounded-3xl
+border
+border-gray-100
+flex
+items-center
+justify-center
+shadow-sm
+">
                     <img
                       src={item.imageurl}
                       alt={item.description}
-                      className="max-w-full max-h-full object-contain"
+                      className="
+max-w-full
+max-h-full
+object-contain
+group-hover:scale-110
+transition
+duration-300
+"
                     />
                   </div>
 
                   {/* Details */}
                   <div className="flex-1 text-center sm:text-left space-y-2">
-                    <h2 className="text-gray-800 font-bold text-xl line-clamp-2 leading-snug">
+                    <h2 className="
+text-2xl
+font-black
+text-gray-900
+tracking-tight
+">
                       {item.description}
                     </h2>
                     <p className="text-gray-400 text-sm font-semibold">
@@ -100,7 +147,9 @@ function Cart() {
 
                   {/* Counter */}
                   <div className="flex flex-row sm:flex-col items-center gap-6 sm:gap-5 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-none pt-4 sm:pt-0">
-                    <div className="flex items-center justify-between bg-emerald-50 border border-emerald-200 rounded-xl h-11 w-32 px-4 shadow-sm">
+                    <div className="flex items-center justify-between bg-gradient-to-r
+from-emerald-100
+to-green-50 border border-emerald-200 rounded-2xl h-11 w-32 px-4 shadow-sm">
                       <button
                         onClick={() => decreaseQuantity(item.id)}
                         className="text-emerald-700 hover:text-emerald-900 p-1.5 transition"
@@ -122,7 +171,21 @@ function Cart() {
 
                     <button
                       onClick={() => removeFromCart(item.id)}
-                      className="text-xs font-bold text-red-500 hover:text-red-700 flex items-center gap-2 transition tracking-wider uppercase px-3 py-1.5 rounded-lg hover:bg-red-50"
+                      className="
+bg-red-50
+hover:bg-red-500
+hover:text-white
+text-red-600
+px-4
+py-2
+rounded-xl
+transition-all
+duration-300
+font-bold
+flex
+items-center
+gap-2
+"
                     >
                       <FaTrash size={12} />
                       <span>Remove</span>
@@ -142,7 +205,8 @@ function Cart() {
             </div>
 
             {/* RIGHT SIDE: FIXED AMAZON/BLINKIT STYLE BILL DETAILS SUMMARY */}
-            <div className="lg:col-span-4 xl:col-span-3 sticky top-8 bg-white rounded-3xl border border-gray-100 shadow-lg p-8 min-w-[360px] min-h-[560px] flex flex-col justify-between">
+            <div className="lg:col-span-4 xl:col-span-3 sticky top-8 bg-white/95
+backdrop-blur-md rounded-[32px] border border-gray-100 shadow-lg p-8 min-w-[360px] min-h-[560px] flex flex-col justify-between">
               
               {/* Top Wrapper to handle separation cleanly */}
               <div className="flex flex-col flex-1 justify-start">
@@ -168,7 +232,11 @@ function Cart() {
                     />
                     <button
                       onClick={applyCoupon}
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs px-4 py-2 rounded-lg shadow-sm transition flex-shrink-0"
+                      className="bg-gradient-to-r
+from-green-500
+to-emerald-600
+hover:from-green-600
+hover:to-emerald-700 hover:bg-emerald-700 text-white font-extrabold text-xs px-4 py-2 rounded-lg shadow-sm transition flex-shrink-0"
                     >
                       Apply
                     </button>
@@ -212,7 +280,9 @@ function Cart() {
                     <span className="font-black text-gray-900 text-xl block tracking-tight">To Pay</span>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mt-0.5 block">Inclusive of all taxes</span>
                   </div>
-                  <span className="text-3xl font-black text-gray-900 tracking-tight">
+                  <span className="text-5xl
+font-black
+text-emerald-600 text-gray-900 tracking-tight">
                     ₹{finalAmount.toFixed(2)}
                   </span>
                 </div>
@@ -223,7 +293,24 @@ function Cart() {
                       state: { grandTotal, discount, finalAmount, couponPercent },
                   })
                 }
-                className="w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-black text-base py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-150 text-center flex items-center justify-center tracking-wide"
+                className="
+w-full
+bg-gradient-to-r
+from-emerald-500
+to-green-600
+hover:from-green-600
+hover:to-emerald-700
+text-white
+font-black
+text-lg
+py-5
+rounded-2xl
+shadow-xl
+hover:shadow-2xl
+hover:scale-[1.02]
+transition-all
+duration-300
+"
                 >
                   Proceed to Checkout
                 </button>

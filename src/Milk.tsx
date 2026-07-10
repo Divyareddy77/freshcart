@@ -2,6 +2,7 @@ import  { useContext } from 'react'
 
 import { CartContext } from './contextapi/CartContext';
 import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 interface MilkItem {
   id: number;
   name: string;
@@ -224,8 +225,14 @@ transition
     </div>
 
     <button
-    onClick={() => addToCart(milk)}
-    className="
+  onClick={() => {
+    addToCart(milk);
+    toast.success(`${milk.name} added to cart 🥛`, {
+      autoClose: 2000,
+      position: "top-right",
+    });
+  }}
+  className="
     mt-auto
     w-full
     bg-gradient-to-r
@@ -242,9 +249,9 @@ transition
     duration-300
     hover:scale-105
     shadow-lg
-    "
+  "
 >
-    🛒 Add To Cart
+  🛒 Add To Cart
 </button>
   </li>
 ));
