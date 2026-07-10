@@ -294,7 +294,7 @@ border-green-200
                 <h4>Scan UPI QR to Pay ₹{finalAmount.toFixed(2)}</h4>
                 <div className="flex justify-center my-5">
                 <QRCode
-                  value={`upi://pay?pa=9390591458@ybl&pn=ArunMart&am=${finalAmount.toFixed(2)}&cu=INR`}
+                  value={`upi://pay?pa=8779810053@ybl&pn=DivyaMart&am=${finalAmount.toFixed(2)}&cu=INR`}
                 />
                 </div>
                 <p className="
