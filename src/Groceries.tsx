@@ -47,57 +47,126 @@ function Groceries() {
     imageurl: "/images/oil.jpg",
     description: "Refined sunflower oil",
   },
-  { id: 205, name: "Sugar", price: 55, description: "Premium sugar", imageurl: "/images/Sugar.avif" },
-  { id: 206, name: "Salt", price: 25, description: "Iodized salt", imageurl: "/images/Salt.avif" },
-  { id: 207, name: "Turmeric Powder", price: 45, description: "Pure turmeric powder", imageurl: "/images/Turmeric Powder.avif" },
-  { id: 208, name: "Red Chilli Powder", price: 80, description: "Spicy chilli powder", imageurl: "/images/Red Chilli Powder.avif" },
-  { id: 209, name: "Coriander Powder", price: 60, description: "Fresh coriander powder", imageurl: "/images/Coriander Powde.jpg" },
-  { id: 210, name: "Black Pepper", price: 120, description: "Whole black pepper", imageurl: "/images/Black Pepper.avif" },
-  { id: 211, name: "Jeera", price: 90, description: "Whole cumin seeds", imageurl: "/images/Jeera.jpg" },
-  { id: 212, name: "Mustard Seeds", price: 45, description: "Premium mustard seeds", imageurl: "/images/Mustard Seeds.avif" },
-  { id: 213, name: "Poha", price: 70, description: "Fresh poha", imageurl: "/images/Poha.jpg" },
-  { id: 214, name: "Rava", price: 60, description: "Fine rava", imageurl: "/images/rava.jpg" },
-  { id: 215, name: "Maida", price: 50, description: "Refined flour", imageurl: "/images/Maida.jpg" },
-  { id: 216, name: "Besan", price: 90, description: "Gram flour", imageurl: "/images/Besan.jpg" },
-  { id: 217, name: "Green Gram", price: 130, description: "Protein-rich green gram", imageurl: "/images/Green Gram.avif" },
-  { id: 218, name: "Black Gram", price: 140, description: "Premium black gram", imageurl: "/images/Black Gram.avif" },
-  { id: 219, name: "Chickpeas", price: 110, description: "Healthy chickpeas", imageurl: "/images/Chickpeas.avif" },
-  { id: 220, name: "Tea Powder", price: 220, description: "Premium tea powder", imageurl: "/images/Tea Powder.jpg" },
+  { 
+    id: 205, 
+    name: "Sugar", 
+    price: 55, 
+    description: "Premium sugar", 
+    imageurl: "/images/Sugar.avif" 
+  },
+  { 
+    id: 206, 
+    name: "Salt", 
+    price: 25, 
+    description: "Iodized salt", 
+    imageurl: "/images/Salt.avif" 
+  },
+  { 
+    id: 207, 
+    name: "Turmeric Powder", 
+    price: 45, 
+    description: "Pure turmeric powder", 
+    imageurl: "/images/Turmeric Powder.avif" 
+  },
+  { 
+    id: 208, 
+    name: "Red Chilli Powder", 
+    price: 80, 
+    description: "Spicy chilli powder", 
+    imageurl: "/images/Red Chilli Powder.avif" 
+  },
+  { 
+    id: 209, 
+    name: "Coriander Powder", 
+    price: 60, 
+    description: "Fresh coriander powder", 
+    imageurl: "/images/Coriander Powde.jpg" 
+  },
+  { 
+    id: 210, 
+    name: "Black Pepper", 
+    price: 120, 
+    description: "Whole black pepper", 
+    imageurl: "/images/Black Pepper.avif" 
+  },
+  { 
+    id: 211, 
+    name: "Jeera", price: 90, 
+    description: "Whole cumin seeds", 
+    imageurl: "/images/Jeera.jpg" 
+  },
+  { 
+    id: 212, 
+    name: "Mustard Seeds", 
+    price: 45, 
+    description: "Premium mustard seeds", 
+    imageurl: "/images/Mustard Seeds.avif" 
+  },
+  { 
+    id: 213, 
+    name: "Poha", 
+    price: 70, 
+    description: "Fresh poha", 
+    imageurl: "/images/Poha.jpg" 
+  },
+  { 
+    id: 214, 
+    name: "Rava", 
+    price: 60, 
+    description: "Fine rava", 
+    imageurl: "/images/rava.jpg" 
+  },
+  { 
+    id: 215, 
+    name: "Maida", 
+    price: 50, 
+    description: "Refined flour", 
+    imageurl: "/images/Maida.jpg" 
+  },
+  { 
+    id: 216, 
+    name: "Besan", 
+    price: 90, 
+    description: "Gram flour", 
+    imageurl: "/images/Besan.jpg" 
+  },
+  { 
+    id: 217, 
+    name: "Green Gram", 
+    price: 130, 
+    description: "Protein-rich green gram", 
+    imageurl: "/images/Green Gram.avif" 
+  },
+  { 
+    id: 218, 
+    name: "Black Gram", 
+    price: 140, 
+    description: "Premium black gram", 
+    imageurl: "/images/Black Gram.avif" 
+  },
+  { 
+    id: 219, 
+    name: "Chickpeas", 
+    price: 110, 
+    description: "Healthy chickpeas", 
+    imageurl: "/images/Chickpeas.avif" 
+  },
+  { 
+    id: 220, 
+    name: "Tea Powder", 
+    price: 220, 
+    description: "Premium tea powder", 
+    imageurl: "/images/Tea Powder.jpg" 
+  },
 ];
 
 
 let listItems = groceryItems.map((grocery) => (
   <li
     key={grocery.id}
-    className="
-group
-relative
-bg-white
-rounded-3xl
-border
-border-amber-100
-shadow-lg
-overflow-hidden
-p-6
-flex
-flex-col
-items-center
-transition-all
-duration-500
-hover:-translate-y-3
-hover:shadow-2xl
-hover:border-orange-300
-"
-  >
-    <h2 className="
-text-2xl
-font-black
-text-gray-800
-mb-4
-tracking-wide
-group-hover:text-orange-600
-transition
-">
+    className="group relative bg-white rounded-3xl border border-amber-100 shadow-lg overflow-hidden p-6 flex flex-col items-center 
+    transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-orange-300">
+    <h2 className="text-2xl font-black text-gray-800 mb-4 tracking-wide group-hover:text-orange-600 transition">
       {grocery.name}
     </h2>
 
@@ -119,19 +188,11 @@ transition
 </div>
 
     <div className="space-y-2 mb-5">
-      <p className="
-text-4xl
-font-black
-text-orange-400
-">
+      <p className="text-4xl font-black text-orange-400">
         ₹{grocery.price}
       </p>
 
-      <p className="
-text-sm
-text-gray-500
-leading-6
-">
+      <p className="text-sm text-gray-500 leading-6">
         {grocery.description}
       </p>
     </div>
@@ -164,26 +225,8 @@ leading-6
       theme: "colored",
     });
   }}
-  className="
-    mt-auto
-    w-full
-    bg-gradient-to-r
-    from-orange-500
-    to-amber-500
-    hover:from-orange-600
-    hover:to-amber-600
-    text-white
-    font-bold
-    text-lg
-    py-2.5
-    rounded-xl
-    transition-all
-    duration-300
-    hover:scale-105
-    hover:shadow-xl
-    active:scale-95
-  "
->
+  className="mt-auto w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold 
+  text-lg py-2.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95">
   🛒 Add To Cart
 </button>
   </li>

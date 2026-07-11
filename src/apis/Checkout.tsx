@@ -157,16 +157,7 @@ function Checkout() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-100 px-6 py-10">
-      <h1 className="
-text-5xl
-font-black
-text-center
-bg-gradient-to-r
-from-green-600
-to-emerald-500
-bg-clip-text
-text-transparent
-mb-12">
+      <h1 className="text-5xl font-black text-center bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent mb-12">
         Checkout
       </h1>
 
@@ -174,13 +165,7 @@ mb-12">
 
         <div className="lg:col-span-2 space-y-8">
 
-          <div className="bg-white/90
-backdrop-blur-md
-rounded-3xl
-shadow-2xl
-border
-border-green-100
-p-8">
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl border border-green-100 p-8">
             <h2 className="text-2xl font-bold flex items-center gap-2 mb-6">
               <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
     <FaMapMarkerAlt className="text-red-600"/>
@@ -189,26 +174,11 @@ p-8">
 
             <div className="space-y-5">
               <div>
-                <label className="text-gray-700
-font-bold
-text-lg">Customer Name</label>
-                <div className="flex items-center border-2
-border-gray-200
-rounded-xl
-focus-within:border-green-500
-transition
-duration-300 mt-2">
+                <label className="text-gray-700 font-bold text-lg">Customer Name</label>
+                <div className="flex items-center border-2 border-gray-200 rounded-xl focus-within:border-green-500 transition duration-300 mt-2">
                   <FaUser className="mx-3 text-gray-500"/>
                   <input
-                    className="
-w-full
-p-4
-rounded-xl
-outline-none
-bg-transparent
-text-gray-700
-placeholder:text-gray-400
-"
+                    className="w-full p-4 rounded-xl outline-none bg-transparent text-gray-700 placeholder:text-gray-400 "
                     value={name}
                     onChange={(e)=>setName(e.target.value)}
                     placeholder="Enter Name"
@@ -217,26 +187,11 @@ placeholder:text-gray-400
               </div>
 
               <div>
-                <label className="text-gray-700
-font-bold
-text-lg">Mobile Number</label>
-                <div className="flex items-center border-2
-border-gray-200
-rounded-xl
-focus-within:border-green-500
-transition
-duration-300 mt-2">
+                <label className="text-gray-700 font-bold text-lg">Mobile Number</label>
+                <div className="flex items-center border-2 border-gray-200 rounded-xl focus-within:border-green-500 transition duration-300 mt-2">
                   <FaPhone className="mx-3 text-gray-500"/>
                   <input
-                    className="
-w-full
-p-4
-rounded-xl
-outline-none
-bg-transparent
-text-gray-700
-placeholder:text-gray-400
-"
+                    className="w-full p-4 rounded-xl outline-none bg-transparent text-gray-700 placeholder:text-gray-400"
                     value={mobile}
                     onChange={(e)=>setMobile(e.target.value)}
                     placeholder="Enter Mobile Number"
@@ -244,25 +199,11 @@ placeholder:text-gray-400
                 </div>
               </div>
               <div>
-                <label className="text-gray-700
-font-bold
-text-lg">Email</label>
-                <div className="flex items-center border-2
-border-gray-200
-rounded-xl
-focus-within:border-green-500
-transition
-duration-300 mt-2">
+                <label className="text-gray-700 font-bold text-lg">Email</label>
+                <div className="flex items-center border-2 border-gray-200 rounded-xl focus-within:border-green-500 transition duration-300 mt-2">
                   <FaEnvelope className="mx-3 text-gray-500" />
                   <input
-                    className="
-w-full
-p-4
-rounded-xl
-outline-none
-bg-transparent
-text-gray-700
-placeholder:text-gray-400
+                    className="w-full p-4 rounded-xl outline-none bg-transparent text-gray-700 placeholder:text-gray-400
 "
                     value={email}
                     onChange={(e)=>setEmail(e.target.value)}
@@ -270,18 +211,9 @@ placeholder:text-gray-400
                   />
                 </div>
               </div>
-              <button
-    type="button"
-    onClick={getCurrentLocation}
-    className="bg-gradient-to-r
-from-blue-500
-to-cyan-500
-hover:from-blue-600
-hover:to-cyan-600
-shadow-lg
-hover:scale-105
-transition-all
-duration-300 text-white px-5 py-3 rounded-lg flex items-center gap-2"
+              <button type="button"
+                      onClick={getCurrentLocation}
+                      className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 shadow-lg hover:scale-105 transition-all duration-300 text-white px-5 py-3 rounded-lg flex items-center gap-2"
   >
     <FaMapMarkerAlt />
     Use Current Location
@@ -299,21 +231,9 @@ duration-300 text-white px-5 py-3 rounded-lg flex items-center gap-2"
             </div>
           </div>
 
-          <div className="bg-white/90
-backdrop-blur-md
-rounded-3xl
-shadow-2xl
-border
-border-green-100
-p-8">
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl border border-green-100 p-8">
             <h2 className="text-2xl font-bold mb-6">Payment Method</h2>
-            <div className="
-border
-rounded-2xl
-p-5
-hover:border-green-500
-cursor-pointer
-transition">
+            <div className="border rounded-2xl p-5 hover:border-green-500 cursor-pointer transition">
             <label className="flex items-center gap-3 mb-4">
               <input
                 type="radio"
@@ -336,62 +256,30 @@ transition">
             </div>
 
             {paymentMode === "UPI" && (
-              <div className="
-mt-8
-bg-gradient-to-br
-from-green-50
-to-white
-rounded-2xl
-shadow-lg
-p-8
-text-center
-border
-border-green-200
-">
+              <div className="mt-8 bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-lg p-8 text-center border border-green-200 ">
                 <h4>Scan UPI QR to Pay ₹{finalAmount.toFixed(2)}</h4>
                 <div className="flex justify-center my-5">
                 <QRCode
                   value={`upi://pay?pa=8779810053@ybl&pn=DivyaMart&am=${finalAmount.toFixed(2)}&cu=INR`}
                 />
                 </div>
-                <p className="
-font-bold
-text-lg
-text-green-700
-mt-3">UPI ID: 8779810053@ybl</p>
+                <p className="font-bold text-lg text-green-700 mt-3">UPI ID: 8779810053@ybl</p>
               </div>
             )}
 
             {paymentMode==="COD" && (
-              <div className="mt-6 bg-gradient-to-r
-from-green-100
-to-green-50
-rounded-2xl
-border
-border-green-300 p-5 rounded-xl">
+              <div className="mt-6 bg-gradient-to-r from-green-100 to-green-50 rounded-2xl border border-green-300 p-5 rounded-xl">
                 Cash will be collected during delivery.
               </div>
             )}
           </div>
         </div>
 
-        <div className="bg-white/90
-backdrop-blur-lg
-rounded-3xl
-shadow-2xl
-border
-border-green-100
-p-8
-sticky
-top-5 p-6 h-fit sticky top-5">
+        <div className="bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl border border-green-100 p-8 sticky top-5 p-6 h-fit sticky top-5">
           <h2 className="text-3xl font-bold mb-6">Order Summary</h2>
 
           <div className="space-y-4">
-            <div className="flex
-justify-between
-text-lg
-font-medium
-text-gray-700">
+            <div className="flex justify-between text-lg font-medium text-gray-700">
               <span>Total Items</span>
               <span>{cart.length}</span>
             </div>
@@ -413,9 +301,7 @@ text-gray-700">
 
             <hr/>
 
-            <div className="flex justify-between text-4xl
-font-black
-text-green-600">
+            <div className="flex justify-between text-4xl font-black text-green-600">
               <span>Payable</span>
               <span>₹{finalAmount.toFixed(2)}</span>
             </div>
@@ -423,30 +309,8 @@ text-green-600">
 
           <button
             onClick={placeOrder}
-            className="
-mt-8
-w-full
-bg-gradient-to-r
-from-green-500
-to-emerald-600
-hover:from-green-600
-hover:to-emerald-700
-text-white
-font-black
-text-xl
-py-4
-rounded-2xl
-shadow-xl
-hover:shadow-2xl
-hover:scale-105
-transition-all
-duration-300
-flex
-justify-center
-items-center
-gap-3
-"
-          >
+            className="mt-8 w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white 
+            font-black text-xl py-4 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex justify-center items-center gap-3">
             <FaCheckCircle/>
             Place Order
           </button>

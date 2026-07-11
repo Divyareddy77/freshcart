@@ -11,21 +11,21 @@ import Customer3 from "../assets/customer3.jpg";
 function Testimonials() {
   const reviews = [
     {
-      name: "Rahul Sharma",
+      name: "Priya Reddy",
       city: "Hyderabad",
       image: Customer1,
       review:
         "FreshCart always delivers fresh vegetables and fruits on time. The quality is amazing and prices are affordable.",
     },
     {
-      name: "Priya Reddy",
+      name: "Rahul Sharma",
       city: "Bangalore",
       image: Customer2,
       review:
         "I love ordering groceries from FreshCart. Everything is neatly packed and customer support is excellent.",
     },
     {
-      name: "Arjun Kumar",
+      name: "Pooja",
       city: "Chennai",
       image: Customer3,
       review:

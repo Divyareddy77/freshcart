@@ -165,23 +165,8 @@ function Fruits() {
   const listItems = fruits.map((fruit) => (
     <li
       key={fruit.id}
-      className="
-group
-relative
-bg-white
-rounded-3xl
-shadow-lg
-border
-border-orange-100
-overflow-hidden
-p-7
-transition-all
-duration-500
-hover:-translate-y-3
-hover:shadow-2xl
-hover:border-orange-300
-"
-    >
+      className="group relative bg-white rounded-3xl shadow-lg border border-orange-100 overflow-hidden p-7 transition-all duration-500 
+      hover:-translate-y-3 hover:shadow-2xl hover:border-orange-300">
       <span className="absolute top-4 left-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
         🌱 Farm Fresh
       </span>
@@ -236,25 +221,8 @@ hover:border-orange-300
             autoClose: 2000,
           });
         }}
-        className="
-w-full
-py-2.5
-rounded-xl
-font-bold
-text-lg
-text-white
-bg-gradient-to-r
-from-orange-500
-via-pink-500
-to-rose-500
-hover:from-orange-600
-hover:to-rose-600
-transition-all
-duration-300
-hover:scale-105
-shadow-lg
-"
-      >
+        className="w-full py-2.5 rounded-xl font-bold text-lg text-white bg-gradient-to-r from-orange-500 via-pink-500 to-rose-500 
+        hover:from-orange-600 hover:to-rose-600 transition-all duration-300 hover:scale-105 shadow-lg">
         🛒 Add To Cart
       </button>
     </li>

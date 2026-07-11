@@ -36,49 +36,15 @@ function Navbar() {
 
   return (
     <>
-      <nav
-  className="
-  sticky
-  top-4
-  z-50
-  w-[96%]
-  max-w-7xl
-  mx-auto
-  bg-gradient-to-r
-  from-green-50
-  via-white
-  to-lime-50
-  border
-  border-green-100
-  rounded-3xl
-  shadow-2xl
-  backdrop-blur-xl
-  "
->
+      <nav className="sticky top-4 z-50 w-[96%] max-w-7xl mx-auto bg-gradient-to-r from-green-50 via-white to-lime-50 border border-green-100 
+      rounded-3xl shadow-2xl backdrop-blur-xl">
 
         <div className="flex items-center justify-between px-8 py-5">
 
           {/* Logo */}
 
-          <Link
-  to="/"
-  className="flex items-center gap-4"
->
-  <div
-    className="
-    w-14
-    h-14
-    rounded-2xl
-    bg-gradient-to-br
-    from-green-500
-    to-emerald-600
-    flex
-    items-center
-    justify-center
-    text-2xl
-    shadow-lg
-    "
-  >
+          <Link to="/" className="flex items-center gap-4">
+  <div className=" w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-2xl shadow-lg">
     🌿
   </div>
 
@@ -97,77 +63,36 @@ function Navbar() {
 
           <div className="hidden lg:flex items-center gap-2">
 
-            <NavLink to="/" className={({ isActive }) =>
-  `px-5 py-2 rounded-xl transition-all duration-300 font-semibold ${
-    isActive
-      ? "bg-green-500 text-white shadow-lg"
-      : "text-gray-700 hover:bg-green-100 hover:text-green-700"
-  }`
-}>
+            <NavLink to="/" className={({ isActive }) => `px-5 py-2 rounded-xl transition-all duration-300 font-semibold 
+            ${isActive ? "bg-green-500 text-white shadow-lg" : "text-gray-700 hover:bg-green-100 hover:text-green-700"}`}>
               Home
             </NavLink>
 
-            <NavLink to="/Veg" className={({ isActive }) =>
-  `px-5 py-2 rounded-xl transition-all duration-300 font-semibold ${
-    isActive
-      ? "bg-green-500 text-white shadow-lg"
-      : "text-gray-700 hover:bg-green-100 hover:text-green-700"
-  }`
-}>
+            <NavLink to="/Veg" className={({ isActive }) => `px-5 py-2 rounded-xl transition-all duration-300 font-semibold 
+            ${isActive ? "bg-green-500 text-white shadow-lg" : "text-gray-700 hover:bg-green-100 hover:text-green-700"}`}>
               Vegetables
             </NavLink>
 
-            <NavLink to="/Fruits" className={({ isActive }) =>
-  `px-5 py-2 rounded-xl transition-all duration-300 font-semibold ${
-    isActive
-      ? "bg-green-500 text-white shadow-lg"
-      : "text-gray-700 hover:bg-green-100 hover:text-green-700"
-  }`
-}>
+            <NavLink to="/Fruits" className={({ isActive }) => `px-5 py-2 rounded-xl transition-all duration-300 font-semibold 
+            ${ isActive ? "bg-green-500 text-white shadow-lg" : "text-gray-700 hover:bg-green-100 hover:text-green-700"}`}>
               Fruits
             </NavLink>
 
-            <NavLink to="/Milk" className="
-px-5
-py-3
-rounded-xl
-font-semibold
-text-gray-700
-transition-all
-duration-300
-hover:bg-green-100
-hover:text-green-700
-hover:scale-105
-">
+            <NavLink to="/Milk" className="px-5 py-3 rounded-xl font-semibold text-gray-700 transition-all duration-300 hover:bg-green-100 hover:text-green-700 hover:scale-105">
               Dairy
             </NavLink>
 
-            <NavLink to="/Groceries" className={({ isActive }) =>
-  `px-5 py-2 rounded-xl transition-all duration-300 font-semibold ${
-    isActive
-      ? "bg-green-500 text-white shadow-lg"
-      : "text-gray-700 hover:bg-green-100 hover:text-green-700"
-  }`
-}>
+            <NavLink to="/Groceries" className={({ isActive }) => `px-5 py-2 rounded-xl transition-all duration-300 font-semibold 
+            ${ isActive ? "bg-green-500 text-white shadow-lg" : "text-gray-700 hover:bg-green-100 hover:text-green-700"}`}>
               Grocery
             </NavLink>
 
-            <NavLink to="/Nonveg" className={({ isActive }) =>
-  `px-5 py-2 rounded-xl transition-all duration-300 font-semibold ${
-    isActive
-      ? "bg-green-500 text-white shadow-lg"
-      : "text-gray-700 hover:bg-green-100 hover:text-green-700"
-  }`
-}>
+            <NavLink to="/Nonveg" className={({ isActive }) => `px-5 py-2 rounded-xl transition-all duration-300 font-semibold 
+            ${ isActive ? "bg-green-500 text-white shadow-lg" : "text-gray-700 hover:bg-green-100 hover:text-green-700"}` }>
               Non-Veg
             </NavLink>
-            <NavLink to="/Orders" className={({ isActive }) =>
-  `px-5 py-2 rounded-xl transition-all duration-300 font-semibold ${
-    isActive
-      ? "bg-green-500 text-white shadow-lg"
-      : "text-gray-700 hover:bg-green-100 hover:text-green-700"
-  }`
-}>
+            <NavLink to="/Orders" className={({ isActive }) => `px-5 py-2 rounded-xl transition-all duration-300 font-semibold 
+            ${ isActive ? "bg-green-500 text-white shadow-lg" : "text-gray-700 hover:bg-green-100 hover:text-green-700"}`}>
               Orders
             </NavLink>
 
@@ -235,67 +160,19 @@ hover:scale-105
 
             </button> */}
 
-            <Link
-to="/Cart"
-className="
-relative
-w-12
-h-12
-rounded-2xl
-bg-green-100
-flex
-items-center
-justify-center
-hover:bg-green-500
-hover:text-white
-transition-all
-duration-300
-shadow-md
-"
->
+            <Link to="/Cart" className=" relative w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center hover:bg-green-500 
+            hover:text-white transition-all duration-300 shadow-md">
 
               <FaShoppingCart />
 
-              <span
-className="
-absolute
--top-2
--right-2
-w-6
-h-6
-rounded-full
-bg-red-500
-text-white
-text-xs
-font-bold
-flex
-items-center
-justify-center
-shadow
-"
->
+              <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 text-white text-xs font-bold flex items-center justify-center shadow">
                 {cart.length}
               </span>
 
             </Link>
 
-            {/* <button
-className="
-w-12
-h-12
-rounded-2xl
-bg-gray-100
-flex
-items-center
-justify-center
-text-2xl
-hover:bg-green-500
-hover:text-white
-transition-all
-duration-300
-shadow-md
-"
->
+            {/* <button className=" w-12 h-12 rounded-2xl bg-gray-100 flex items-center justify-center text-2xl hover:bg-green-500 hover:text-white 
+            transition-all duration-300 shadow-md">
 
               <FaUserCircle />
 

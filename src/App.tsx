@@ -103,17 +103,7 @@ function App() {
             {/* <Route path="/Register" element ={<Register/>}/>
             <Route path="/Login" element={<Login />}/> */}
           </Routes>
-          <ToastContainer
-  position="top-right"
-  autoClose={2000}
-  hideProgressBar={false}
-  newestOnTop
-  closeOnClick
-  pauseOnHover={false}
-  pauseOnFocusLoss={false}
-  draggable
-  theme="light"
-/>
+          <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover={false} pauseOnFocusLoss={false} draggable theme="light"/>
 
         </div>
 

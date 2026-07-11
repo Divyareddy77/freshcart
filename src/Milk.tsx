@@ -164,37 +164,12 @@ function Milk() {
 let listItems = milkItems.map((milk) => (
   <li
     key={milk.id}
-    className="
-group
-relative
-bg-white
-rounded-3xl
-border
-border-sky-100
-shadow-lg
-overflow-hidden
-p-6
-flex
-flex-col
-items-center
-transition-all
-duration-500
-hover:-translate-y-3
-hover:shadow-2xl
-hover:border-sky-400
-"
-  >
+    className="group relative bg-white rounded-3xl border border-sky-100 shadow-lg overflow-hidden p-6 flex flex-col items-center 
+    transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-sky-400">
     <span className="absolute top-4 left-4 bg-sky-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
     Fresh
 </span>
-    <h2 className="
-text-2xl
-font-black
-text-gray-800
-mb-4
-group-hover:text-sky-600
-transition
-">
+    <h2 className="text-2xl font-black text-gray-800 mb-4 group-hover:text-sky-600 transition">
       {milk.name}
     </h2>
 
@@ -249,25 +224,8 @@ transition
       position: "top-right",
     });
   }}
-  className="
-    mt-auto
-    w-full
-    bg-gradient-to-r
-    from-sky-300
-    to-blue-600
-    hover:from-sky-600
-    hover:to-blue-700
-    text-white
-    font-bold
-    text-lg
-    py-2.5
-    rounded-xl
-    transition-all
-    duration-300
-    hover:scale-105
-    shadow-lg
-  "
->
+  className="mt-auto w-full bg-gradient-to-r from-sky-300 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-lg 
+  py-2.5 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
   🛒 Add To Cart
 </button>
   </li>

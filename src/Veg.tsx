@@ -69,130 +69,125 @@ function Veg() {
 
         },
        
-  {
-    id: 5,
-    name: "Cabbage",
-    price: 40,
-    description: "Fresh green cabbage",
-    imageurl: "/images/cabbage.jpg",
-  },
-  {
-    id: 6,
-    name: "Cauliflower",
-    price: 60,
-    description: "Farm fresh cauliflower",
-    imageurl: "/images/cauliflower.avif",
-  },
-  {
-    id: 7,
-    name: "Onion",
-    price: 35,
-    description: "Fresh red onions",
-    imageurl: "/images/onion.avif",
-  },
-  {
-    id: 8,
-    name: "Capsicum",
-    price: 90,
-    description: "Fresh green capsicum",
-    imageurl: "/images/capsicum.jpg",
-  },
-  {
-    id: 9,
-    name: "Beetroot",
-    price: 55,
-    description: "Healthy beetroot",
-    imageurl: "/images/beetroot.avif",
-  },
-  {
-    id: 10,
-    name: "Spinach",
-    price: 30,
-    description: "Fresh spinach leaves",
-    imageurl: "/images/spinach.avif",
-  },
-  {
-    id: 11,
-    name: "Cucumber",
-    price: 35,
-    description: "Cool fresh cucumbers",
-    imageurl: "/images/cucumber.avif",
-  },
-  {
-    id: 12,
-    name: "Brinjal",
-    price: 45,
-    description: "Fresh purple brinjal",
-    imageurl: "/images/brinjal.jpg",
-  },
-  {
-    id: 13,
-    name: "Bottle Gourd",
-    price: 40,
-    description: "Healthy bottle gourd",
-    imageurl: "/images/bottlegourd.jpg",
-  },
-  {
-    id: 14,
-    name: "Pumpkin",
-    price: 50,
-    description: "Fresh pumpkin",
-    imageurl: "/images/pumpkin.avif",
-  },
-  {
-    id: 15,
-    name: "Radish",
-    price: 30,
-    description: "Fresh white radish",
-    imageurl: "/images/raddish.jpg",
-  },
-  {
-    id: 16,
-    name: "Ladies Finger",
-    price: 60,
-    description: "Tender ladies finger",
-    imageurl: "/images/ladysfinger.jpg",
-  },
-  {
-    id: 17,
-    name: "Green Peas",
-    price: 90,
-    description: "Sweet green peas",
-    imageurl: "/images/greenpeas.avif",
-  },
-  {
-    id: 18,
-    name: "Sweet Corn",
-    price: 70,
-    description: "Fresh sweet corn",
-    imageurl: "/images/sweetcorn.avif",
-  },
-  {
-    id: 19,
-    name: "Beans",
-    price: 60,
-    description: "Fresh green beans",
-    imageurl: "/images/beans.avif",
-  },
-  {
-    id: 20,
-    name: "Mushroom",
-    price: 120,
-    description: "Organic mushrooms",
-    imageurl: "/images/mushrrom.avif",
-  },
+        {
+          id: 5,
+          name: "Cabbage",
+          price: 40,
+          description: "Fresh green cabbage",
+          imageurl: "/images/cabbage.jpg",
+        },
+        {
+          id: 6,
+          name: "Cauliflower",
+          price: 60,
+          description: "Farm fresh cauliflower",
+          imageurl: "/images/cauliflower.avif",
+        },
+        {
+          id: 7,
+          name: "Onion",
+          price: 35,
+          description: "Fresh red onions",
+          imageurl: "/images/onion.avif",
+        },
+        {
+          id: 8,
+          name: "Capsicum",
+          price: 90,
+          description: "Fresh green capsicum",
+          imageurl: "/images/capsicum.jpg",
+        },
+        {
+          id: 9,
+          name: "Beetroot",
+          price: 55,
+          description: "Healthy beetroot",
+          imageurl: "/images/beetroot.avif",
+        },
+        {
+          id: 10,
+          name: "Spinach",
+          price: 30,
+          description: "Fresh spinach leaves",
+          imageurl: "/images/spinach.avif",
+        },
+        {
+          id: 11,
+          name: "Cucumber",
+          price: 35,
+          description: "Cool fresh cucumbers",
+          imageurl: "/images/cucumber.avif",
+        },
+        {
+          id: 12,
+          name: "Brinjal",
+          price: 45,
+          description: "Fresh purple brinjal",
+          imageurl: "/images/brinjal.jpg",
+        },
+        {
+          id: 13,
+          name: "Bottle Gourd",
+          price: 40,
+          description: "Healthy bottle gourd",
+          imageurl: "/images/bottlegourd.jpg",
+        },
+        {
+          id: 14,
+          name: "Pumpkin",
+          price: 50,
+          description: "Fresh pumpkin",
+          imageurl: "/images/pumpkin.avif",
+        },
+        {
+          id: 15,
+          name: "Radish",
+          price: 30,
+          description: "Fresh white radish",
+          imageurl: "/images/raddish.jpg",
+        },
+        {
+          id: 16,
+          name: "Ladies Finger",
+          price: 60,
+          description: "Tender ladies finger",
+          imageurl: "/images/ladysfinger.jpg",
+        },
+        {
+          id: 17,
+          name: "Green Peas",
+          price: 90,
+          description: "Sweet green peas",
+          imageurl: "/images/greenpeas.avif",
+        },
+        {
+          id: 18,
+          name: "Sweet Corn",
+          price: 70,
+          description: "Fresh sweet corn",
+          imageurl: "/images/sweetcorn.avif",
+        },
+        {
+          id: 19,
+          name: "Beans",
+          price: 60,
+          description: "Fresh green beans",
+          imageurl: "/images/beans.avif",
+        },
+        {
+          id: 20,
+          name: "Mushroom",
+          price: 120,
+          description: "Organic mushrooms",
+          imageurl: "/images/mushrrom.avif",
+        },
 ];
 
       
     let listItems = vegItems.map((veg) => (
   <li key={veg.id} className=" relative bg-white rounded-3xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300">
     
-    <h2 className="text-2xl
-font-bold
-tracking-wide
-text-gray-800
-group-hover:text-green-600
-transition">
+    <h2 className="text-2xl font-bold tracking-wide text-gray-800 group-hover:text-green-600 transition">
       {veg.name}
     </h2>
     <span className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
@@ -213,15 +208,11 @@ transition">
 </div>
 
     <div className="space-y-2 mb-5">
-      <p className="text-3xl
-font-black
-text-green-600">
+      <p className="text-3xl font-black text-green-600">
         ₹{veg.price}
       </p>
 
-      <p className="text-sm
-text-gray-500
-leading-6">
+      <p className="text-sm text-gray-500 leading-6">
         {veg.description}
       </p>
     </div>
@@ -274,10 +265,7 @@ leading-6">
       <h1>{customerResponse?.success}</h1>
       <h1>{customerResponse?.message}</h1>
       <h1>{customerResponse?.code}</h1>
-      <div className="min-h-screen bg-gradient-to-br
-from-green-50
-via-white
-to-lime-100 flex flex-col items-center py-10">
+      <div className="min-h-screen bg-gradient-to-br rom-green-50 via-white to-lime-100 flex flex-col items-center py-10">
   {/* <h1 className="text-3xl font-bold text-green-600 mb-8">
     Customer Details
   </h1> */}
@@ -286,20 +274,8 @@ to-lime-100 flex flex-col items-center py-10">
     {customerResponse?.data.map((customer) => (
       <div
         key={customer.id}
-        className="
-group
-bg-white
-rounded-3xl
-shadow-lg
-border
-border-gray-100
-overflow-hidden
-transition-all
-duration-500
-hover:-translate-y-3
-hover:shadow-2xl
-hover:border-green-300
-"
+        className="group bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 
+        hover:-translate-y-3 hover:shadow-2xl hover:border-green-300"
       >
         <h2 className="text-lg font-semibold text-gray-700 mb-2">
           ID: <span className="font-normal">{customer.id}</span>
