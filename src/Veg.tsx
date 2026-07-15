@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext} from 'react'
 
 
 
@@ -8,18 +8,8 @@ import { toast } from 'react-toastify';
 import { FaStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
   
-  interface customer{
-    id : number
-    name : string
-    email : string
-    status : string
-  }
-  interface customerResponse{
-    success : boolean
-    message : "string"
-    code : number
-    data : customer[]
-  }
+  
+  
 function Veg() {
   // const [customerResponse,setcustomerResponse] = useState<customerResponse |null>(null)
   // useEffect(() =>{
