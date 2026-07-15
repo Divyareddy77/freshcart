@@ -207,7 +207,7 @@ function Navbar() {
               </NavLink>
 
               <NavLink
-                to="/Vegetable"
+                to="/Veg"
                 onClick={() => setMenuOpen(false)}
                 className={navLinkStyle}
               >
@@ -231,7 +231,7 @@ function Navbar() {
               </NavLink>
 
               <NavLink
-                to="/Grocery"
+                to="/Groceries"
                 onClick={() => setMenuOpen(false)}
                 className={navLinkStyle}
               >

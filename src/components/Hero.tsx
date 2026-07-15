@@ -18,7 +18,7 @@ function Hero() {
 
       <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-yellow-300 opacity-20 blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12 md:py-24">
 
         <div className="grid lg:grid-cols-2 gap-14 items-center">
 
@@ -34,7 +34,7 @@ function Hero() {
 
             </span>
 
-            <h1 className="mt-8 text-5xl lg:text-7xl font-black leading-tight text-gray-900">
+            <h1 className="mt-8 text-4xl sm:text-5xl lg:text-7xl font-black leading-tight text-gray-900">
 
               Eat Fresh.
 
@@ -83,7 +83,7 @@ function Hero() {
             <div className="flex flex-wrap gap-5 mt-10">
 
               <Link
-                to="/Vegetable"
+                to="/Veg"
                 className="bg-green-600 hover:bg-green-700 transition text-white px-8 py-4 rounded-full flex items-center gap-3 font-semibold shadow-lg hover:scale-105"
               >
                 Shop Now
@@ -93,7 +93,7 @@ function Hero() {
               </Link>
 
               <Link
-                to="/Grocery"
+                to="/Groceries"
                 className="border-2 border-green-600 hover:bg-green-600 hover:text-white transition text-green-700 px-8 py-4 rounded-full font-semibold"
               >
                 Explore Products
@@ -103,7 +103,7 @@ function Hero() {
 
             {/* Features */}
 
-            <div className="grid grid-cols-3 gap-6 mt-14">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
 
               <div className="text-center">
 

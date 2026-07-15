@@ -55,7 +55,7 @@ function FeaturedProducts() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-green-50 to-white">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-green-50 to-white">
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -69,7 +69,7 @@ function FeaturedProducts() {
               Popular Products
             </p>
 
-            <h2 className="text-5xl font-black text-gray-900 mt-2">
+           <h2 className="text-3xl md:text-5xl font-black">
               Featured Products
             </h2>
 
@@ -88,7 +88,7 @@ function FeaturedProducts() {
 
         {/* Products */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
           {products.map((product) => (
 

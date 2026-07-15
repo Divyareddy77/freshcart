@@ -21,13 +21,13 @@ import { useNavigate } from 'react-router-dom';
     data : customer[]
   }
 function Veg() {
-  const [customerResponse,setcustomerResponse] = useState<customerResponse |null>(null)
-  useEffect(() =>{
-    fetch("http://localhost:8080/api/customers")
-    .then((res) => res.json())
-    .then((data) => setcustomerResponse(data))
-    .catch((error) => console.error("Error fetching customer ",error))
-  },[])
+  // const [customerResponse,setcustomerResponse] = useState<customerResponse |null>(null)
+  // useEffect(() =>{
+  //   fetch("http://localhost:8080/api/customers")
+  //   .then((res) => res.json())
+  //   .then((data) => setcustomerResponse(data))
+  //   .catch((error) => console.error("Error fetching customer ",error))
+  // },[])
   const context = useContext(CartContext);
   if (!context) return null;
   const { addToCart } = context;

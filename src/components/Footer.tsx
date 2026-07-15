@@ -113,13 +113,13 @@ function Footer() {
               </li>
 
               <li>
-                <Link to="/Vegetable" className="hover:text-green-400 transition">
+                <Link to="/Veg" className="hover:text-green-400 transition">
                   Vegetables
                 </Link>
               </li>
 
               <li>
-                <Link to="/Fruit" className="hover:text-green-400 transition">
+                <Link to="/Fruits" className="hover:text-green-400 transition">
                   Fruits
                 </Link>
               </li>
@@ -131,7 +131,7 @@ function Footer() {
               </li>
 
               <li>
-                <Link to="/Grocery" className="hover:text-green-400 transition">
+                <Link to="/Groceries" className="hover:text-green-400 transition">
                   Grocery
                 </Link>
               </li>

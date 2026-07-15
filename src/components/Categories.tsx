@@ -21,7 +21,7 @@ function Categories() {
       image: Vegetables,
       icon: <FaLeaf />,
       color: "from-green-400 to-emerald-600",
-      route: "/vegetables",
+      route: "/Veg",
       description: "Farm fresh vegetables delivered daily.",
     },
     {
@@ -45,7 +45,7 @@ function Categories() {
       image: Grocery,
       icon: <FaShoppingBasket />,
       color: "from-yellow-400 to-orange-500",
-      route: "/Grocery",
+      route: "/Groceries",
       description: "Daily essentials for your kitchen.",
     },
     {
@@ -59,7 +59,7 @@ function Categories() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-green-50">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-white to-green-50">
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -71,7 +71,7 @@ function Categories() {
             Categories
           </span>
 
-          <h2 className="text-5xl font-black mt-3 text-gray-900">
+          <h2 className="text-3xl md:text-5xl font-black">
             Shop by Category
           </h2>
 
@@ -83,7 +83,7 @@ function Categories() {
 
         {/* Cards */}
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mt-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mt-10 md:mt-16">
 
           {categories.map((item) => (
 
