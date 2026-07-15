@@ -263,66 +263,22 @@ function Veg() {
     
   
   return (
-    
-    <>
-      <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
-    <h1 className="text-5xl font-bold text-gray-800">
+  <>
+    <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
+      <h1 className="text-5xl font-bold text-gray-800">
         🥦 Fresh Vegetables
-    </h1>
+      </h1>
 
-    <p className="text-gray-500 mt-3">
+      <p className="text-gray-500 mt-3">
         Fresh from farms • Best Quality • Delivered in Minutes
-    </p>
-</div>
+      </p>
+    </div>
 
-      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">{listItems}</ol>
-      <div className="min-h-screen bg-[#faf8f4]">
-      
-      <h1>{customerResponse?.success}</h1>
-      <h1>{customerResponse?.message}</h1>
-      <h1>{customerResponse?.code}</h1>
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-lime-100 flex flex-col items-center py-10">
-  {/* <h1 className="text-3xl font-bold text-green-600 mb-8">
-    Customer Details
-  </h1> */}
-
-  <div className="w-full max-w-4xl flex flex-wrap justify-center gap-6">
-    {customerResponse?.data.map((customer) => (
-      <div
-        key={customer.id}
-        className="group bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 
-        hover:-translate-y-3 hover:shadow-2xl hover:border-green-300"
-      >
-        <h2 className="text-lg font-semibold text-gray-700 mb-2">
-          ID: <span className="font-normal">{customer.id}</span>
-        </h2>
-
-        <h2 className="text-lg font-semibold text-gray-700 mb-2">
-          Name: <span className="font-normal">{customer.name}</span>
-        </h2>
-
-        <h2 className="text-lg font-semibold text-gray-700 mb-2">
-          Email: <span className="font-normal">{customer.email}</span>
-        </h2>
-
-        <h2
-          className={`text-lg font-semibold ${
-            customer.status === "Active"
-              ? "text-green-600"
-              : "text-red-600"
-          }`}
-        >
-          Status: <span className="font-normal">{customer.status}</span>
-        </h2>
-      </div>
-    ))}
-  </div>
-</div>
-
-      </div>
-      
-    </>
-  )
+    <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+      {listItems}
+    </ol>
+  </>
+);
 }
 export default Veg
 
