@@ -36,8 +36,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-4 z-50 w-[96%] max-w-7xl mx-auto bg-gradient-to-r from-green-50 via-white to-lime-50 border border-green-100 
-      rounded-3xl shadow-2xl backdrop-blur-xl">
+      <nav className="relative sticky top-4 z-50 w-[96%] max-w-7xl mx-auto bg-gradient-to-r from-green-50 via-white to-lime-50 border border-green-100 rounded-3xl shadow-2xl backdrop-blur-xl">
 
         <div className="flex items-center justify-between px-8 py-5">
 
@@ -61,7 +60,7 @@ function Navbar() {
 
           {/* Desktop Menu */}
 
-          <div className="flex flex-col gap-3">
+          <div className="hidden lg:flex items-center gap-2">
 
             <NavLink to="/" className={({ isActive }) => `px-5 py-2 rounded-xl transition-all duration-300 font-semibold 
             ${isActive ? "bg-green-500 text-white shadow-lg" : "text-gray-700 hover:bg-green-100 hover:text-green-700"}`}>
@@ -97,43 +96,42 @@ function Navbar() {
             </NavLink>
 
           </div>
-          <div className="hidden lg:flex items-center gap-3">
-  {loggedInUser ? (
-    <>
-      <span className="font-semibold">
-        Welcome <b>{loggedInUser.name}</b>
-      </span>
+          <hr className="border-gray-200" />
 
-      <button
-        onClick={logout}
-        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
-      >
-        Logout
-      </button>
-    </>
-  ) : (
-    <>
-      <NavLink
-    to="/Login"
-    onClick={() => setMenuOpen(false)}
-    className={navLinkStyle}
->
-    <FaSignInAlt className="mr-2" />
-    Login
-</NavLink>
+{loggedInUser ? (
+  <>
+    <span className="font-semibold">
+      Welcome <b>{loggedInUser.name}</b>
+    </span>
 
-<NavLink
-    to="/Register"
-    onClick={() => setMenuOpen(false)}
-    className={navLinkStyle}
->
-    <FaUserPlus className="mr-2" />
-    Register
-</NavLink>
-    </>
-  )}
-</div>
+    <button
+      onClick={logout}
+      className="bg-red-500 text-white rounded-lg py-2"
+    >
+      Logout
+    </button>
+  </>
+) : (
+  <>
+    <NavLink
+      to="/Login"
+      onClick={() => setMenuOpen(false)}
+      className={navLinkStyle}
+    >
+      <FaSignInAlt className="inline mr-2" />
+      Login
+    </NavLink>
 
+    <NavLink
+      to="/Register"
+      onClick={() => setMenuOpen(false)}
+      className={navLinkStyle}
+    >
+      <FaUserPlus className="inline mr-2" />
+      Register
+    </NavLink>
+  </>
+)}
           
 
           {/* Icons */}
@@ -170,7 +168,7 @@ function Navbar() {
         {/* Mobile Menu */}
 
         {menuOpen && (
-          <div className="lg:hidden mt-4 bg-white rounded-3xl shadow-xl p-6">
+  <div className="absolute top-full left-0 w-full mt-2 bg-white rounded-3xl shadow-xl p-6 lg:hidden z-50">
 
             <div className="flex flex-col gap-5">
 
