@@ -185,63 +185,79 @@ function Veg() {
 
       
     let listItems = vegItems.map((veg) => (
-  <li key={veg.id} className=" relative bg-white rounded-3xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300">
-    
-    <h2 className="text-2xl font-bold tracking-wide text-gray-800 group-hover:text-green-600 transition">
+  <li
+  key={veg.id}
+  className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden"
+>
+  {/* Badge */}
+  <div className="px-4 pt-4">
+    <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-md">
+      ORGANIC
+    </span>
+  </div>
+
+  {/* Image */}
+  <div className="flex justify-center py-4">
+    <img
+      src={veg.imageurl}
+      alt={veg.name}
+      className="w-44 h-44 object-contain hover:scale-110 transition duration-300"
+    />
+  </div>
+
+  {/* Rating */}
+  <div className="flex justify-between items-center px-4">
+    <span className="text-orange-500 text-xs font-semibold">
+      ⚡ 10 MINS
+    </span>
+
+    <div className="flex items-center gap-1 text-yellow-500 text-sm">
+      <FaStar size={12} />
+      <span>4.5</span>
+    </div>
+  </div>
+
+  {/* Details */}
+  <div className="px-4 py-4">
+    <h2 className="text-2xl font-bold text-gray-800">
       {veg.name}
     </h2>
-    <span className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
-    Organic
-</span>
 
-   <img
-  src={veg.imageurl}
-  alt={veg.name}
-  className="w-56 h-56 mx-auto rounded-2xl object-cover transition-transform duration-500 group-hover:scale-110"
-/>
-<div className="flex justify-center gap-1 text-yellow-400">
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-</div>
+    <p className="text-gray-500 mt-2 h-12">
+      {veg.description}
+    </p>
 
-    <div className="space-y-2 mb-5">
-      <p className="text-3xl font-black text-green-600">
+    {/* Price + Button */}
+    <div className="flex justify-between items-center mt-5">
+      <h2 className="text-3xl font-bold">
         ₹{veg.price}
-      </p>
+        <span className="text-base font-medium text-gray-500">
+          /kg
+        </span>
+      </h2>
 
-      <p className="text-sm text-gray-500 leading-6">
-        {veg.description}
-      </p>
+      <button
+        onClick={() => {
+          const loggedInUser = JSON.parse(
+            localStorage.getItem("loggedInUser") || "null"
+          );
+
+          if (!loggedInUser) {
+            toast.warning("Please login first!");
+            setTimeout(() => navigate("/Login"), 1500);
+            return;
+          }
+
+          addToCart(veg);
+          toast.success(`${veg.name} added to cart`);
+        }}
+        className="border-2 border-orange-400 text-orange-500 font-bold px-7 py-2 rounded-lg hover:bg-orange-400 hover:text-white transition"
+      >
+        ADD +
+      </button>
     </div>
-
-    <button
-  onClick={() => {
-    const loggedInUser = JSON.parse(
-      localStorage.getItem("loggedInUser") || "null"
-    );
-
-    if (!loggedInUser) {
-
-      toast.warning("Please login first!");
-
-      setTimeout(() => {
-        navigate("/Login");
-      }, 1500);
-
-      return;
-    }
-
-    addToCart(veg);
-    toast.success(`${veg.name} added to cart 🛒`,{autoClose : 2000});
-    
-  }}
-  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl font-semibold py-2.5 rounded-xl transition duration-300 hover:scale-105 shadow-lg">
-  Add To Cart
-</button>
-  </li>
+  </div>
+</li>
 ));
       
     
@@ -249,23 +265,23 @@ function Veg() {
   return (
     
     <>
-      <div className="bg-gradient-to-r from-green-600 via-emerald-500 to-lime-500 rounded-3xl p-10 mb-10 text-center text-white shadow-2xl">
-        <h1 className="text-5xl font-black">
-          🥦 Fresh Vegetables
-        </h1>
+      <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
+    <h1 className="text-5xl font-bold text-gray-800">
+        🥦 Fresh Vegetables
+    </h1>
 
-        <p className="mt-4 text-lg text-green-100">
-          Farm Fresh • Organic • Delivered Daily
-        </p>
-      </div>
+    <p className="text-gray-500 mt-3">
+        Fresh from farms • Best Quality • Delivered in Minutes
+    </p>
+</div>
 
-      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">{listItems}</ol>
-      <div className='min-h-screen bg-gradient-to-br from-green-50 via-white to-lime-100'>
+      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">{listItems}</ol>
+      <div className="min-h-screen bg-[#faf8f4]">
       
       <h1>{customerResponse?.success}</h1>
       <h1>{customerResponse?.message}</h1>
       <h1>{customerResponse?.code}</h1>
-      <div className="min-h-screen bg-gradient-to-br rom-green-50 via-white to-lime-100 flex flex-col items-center py-10">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-lime-100 flex flex-col items-center py-10">
   {/* <h1 className="text-3xl font-bold text-green-600 mb-8">
     Customer Details
   </h1> */}

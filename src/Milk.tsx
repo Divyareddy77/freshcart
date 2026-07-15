@@ -163,90 +163,102 @@ function Milk() {
 
 let listItems = milkItems.map((milk) => (
   <li
-    key={milk.id}
-    className="group relative bg-white rounded-3xl border border-sky-100 shadow-lg overflow-hidden p-6 flex flex-col items-center 
-    transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-sky-400">
-    <span className="absolute top-4 left-4 bg-sky-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
-    Fresh
+  key={milk.id}
+  className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+>
+    <div className="px-4 pt-4">
+    <span className="inline-block bg-indigo-100 text-indigo-400 text-xs font-semibold px-3 py-1 rounded-md">
+    FARM FRESH
 </span>
-    <h2 className="text-2xl font-black text-gray-800 mb-4 group-hover:text-sky-600 transition">
-      {milk.name}
-    </h2>
-
-    <div className="w-56 h-56 bg-sky-50 rounded-2xl flex items-center justify-center mb-5 shadow-inner">
-
-    <div className="w-full h-60 rounded-2xl overflow-hidden bg-gray-100 mb-5">
-  <img
-    src={milk.imageurl}
-    alt={milk.name}
-    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-  />
 </div>
+    
 
+    <div className="flex justify-center py-5">
+    <img
+        src={milk.imageurl}
+        alt={milk.name}
+        className="w-48 h-48 object-contain hover:scale-110 transition-transform duration-300"
+    />
 </div>
-<div className="flex justify-center gap-1 text-yellow-400 mb-3">
-    <FaStar />
-    <FaStar />
-    <FaStar />
-    <FaStar />
-    <FaStar />
-</div>
+<div className="flex justify-between items-center px-4">
 
-    <div className="space-y-2 mb-5">
-      <p className="text-2xl text-center font-black text-sky-500">
-    ₹{milk.price}
-</p>
-      <p className="text-gray-500 text-sm leading-6">
-    {milk.description}
-</p>
+   <span className="text-indigo-400 text-xs font-semibold">
+    ⚡ 10 MINS
+</span>
+    <div className="flex items-center gap-1 text-yellow-500 text-sm">
+        <FaStar size={12}/>
+        <span>4.5</span>
     </div>
 
-    <button
-  onClick={() => {
-    const loggedInUser = JSON.parse(
-      localStorage.getItem("loggedInUser") || "null"
-    );
+</div>
 
-    if (!loggedInUser) {
+    <div className="px-4 py-4">
 
-      toast.warning("Please login first!");
+    <h2 className="text-2xl font-bold text-gray-800">
+        {milk.name}
+    </h2>
 
-      setTimeout(() => {
-        navigate("/login");
-      }, 1500);
+    <p className="text-gray-500 mt-2 h-12">
+        {milk.description}
+    </p>
 
-      return;
-    }
+    <div className="flex justify-between items-center mt-5">
 
-    addToCart(milk);
-    toast.success(`${milk.name} added to cart 🥛`, {
-      autoClose: 2000,
-      position: "top-right",
-    });
-  }}
-  className="mt-auto w-full bg-gradient-to-r from-sky-300 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-lg 
-  py-2.5 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
-  🛒 Add To Cart
-</button>
+       <h2 className="text-3xl font-bold text-indigo-400">
+            ₹{milk.price}
+            <span className="text-base font-medium text-gray-500">
+                /kg
+            </span>
+        </h2>
+
+        <button
+            onClick={() => {
+                const loggedInUser = JSON.parse(
+                    localStorage.getItem("loggedInUser") || "null"
+                );
+
+                if (!loggedInUser) {
+                    toast.warning("Please login first!");
+
+                    setTimeout(() => {
+                        navigate("/login");
+                    }, 1500);
+
+                    return;
+                }
+
+                addToCart(milk);
+
+                toast.success(`${milk.name} added to cart 🥛`, {
+                    autoClose: 2000,
+                });
+            }}
+            className="border-2 border-indigo-400 text-indigo-500 font-bold px-7 py-2 rounded-lg hover:bg-indigo-400 hover:text-white transition"
+        >
+            ADD +
+        </button>
+
+    </div>
+
+</div>
   </li>
 ));
  
   return (
     <>
     
-  <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-blue-100 py-10">
-    <div className="max-w-7xl mx-auto mb-12 rounded-3xl bg-gradient-to-r from-sky-600 via-blue-500 to-cyan-500 text-white shadow-2xl px-10 py-12 text-center">
-
-    <h1 className="text-5xl font-black tracking-wide">
+  <div className="min-h-screen bg-gray-50 py-10 px-6">
+    <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
+    <h1 className="text-5xl font-bold text-gray-800">
         🥛 Fresh Dairy Collection
     </h1>
 
-    <p className="mt-4 text-xl text-blue-100">
+    <p className="mt-3 text-gray-500">
         Pure • Fresh • Healthy • Delivered Daily
     </p>
 
 </div>
-     <ol className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-6">
+     <ol className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-6">
     {listItems}
 </ol>
   </div>

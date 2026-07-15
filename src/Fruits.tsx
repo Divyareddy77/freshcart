@@ -165,48 +165,59 @@ function Fruits() {
   const listItems = fruits.map((fruit) => (
     <li
       key={fruit.id}
-      className="group relative bg-white rounded-3xl shadow-lg border border-orange-100 overflow-hidden p-7 transition-all duration-500 
-      hover:-translate-y-3 hover:shadow-2xl hover:border-orange-300">
-      <span className="absolute top-4 left-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
-        🌱 Farm Fresh
-      </span>
+      className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+      <div className="px-4 pt-4">
+    <span className="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-md">
+        FARM PICK
+    </span>
+</div>
 
-      <h2  className="mt-8 text-3xl font-extrabold text-center">
-        {fruit.name}
-      </h2>
-
-      <div className="h-56 w-full bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl overflow-hidden flex items-center justify-center mb-5">
+      
+      <div className="flex justify-center py-5">
   <img
     src={fruit.imageurl}
     alt={fruit.name}
-    className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+    className="w-48 h-48 object-contain hover:scale-110 transition duration-300"
   />
 </div>
 
-      <div className="flex justify-center gap-1 text-amber-400 text-lg mb-3">
-        <FaStar />
-        <FaStar />
-        <FaStar />
-        <FaStar />
-        <FaStar />
-      </div>
+     <div className="flex justify-between items-center px-4">
+  <span className="text-orange-500 text-xs font-semibold">
+    ⚡ 10 MINS
+  </span>
 
-     <p className="text-2xl text-center font-black text-orange-600 tracking-tight">
-    ₹{fruit.price}
-</p>
+  <div className="flex items-center gap-1 text-yellow-500 text-sm">
+    <FaStar size={12} />
+    <span>4.5</span>
+  </div>
+</div>
 
-      <p className="text-gray-500 mt-3 mb-6">
+     <div className="px-5 pb-5">
+
+    <h2 className="text-2xl font-bold text-gray-800">
+        {fruit.name}
+    </h2>
+
+    <p className="text-gray-500 mt-2 h-12">
         {fruit.description}
-      </p>
+    </p>
 
-      <button
-        onClick={() => {
-          const loggedInUser = JSON.parse(
+    <div className="flex justify-between items-center mt-5">
+
+        <h2 className="text-3xl font-bold">
+            ₹{fruit.price}
+            <span className="text-base font-medium text-gray-500">
+                /kg
+            </span>
+        </h2>
+
+        <button
+  onClick={() => {
+    const loggedInUser = JSON.parse(
       localStorage.getItem("loggedInUser") || "null"
     );
 
     if (!loggedInUser) {
-
       toast.warning("Please login first!");
 
       setTimeout(() => {
@@ -216,26 +227,31 @@ function Fruits() {
       return;
     }
 
-          addToCart(fruit);
-          toast.success(`${fruit.name} added to cart 🍎`, {
-            autoClose: 2000,
-          });
-        }}
-        className="w-full py-2.5 rounded-xl font-bold text-lg text-white bg-gradient-to-r from-orange-500 via-pink-500 to-rose-500 
-        hover:from-orange-600 hover:to-rose-600 transition-all duration-300 hover:scale-105 shadow-lg">
-        🛒 Add To Cart
-      </button>
+    addToCart(fruit);
+
+    toast.success(`${fruit.name} added to cart 🍎`, {
+      autoClose: 2000,
+    });
+  }}
+  className="border-2 border-orange-400 text-orange-500 font-bold px-7 py-2 rounded-lg hover:bg-orange-400 hover:text-white transition"
+>
+  ADD +
+</button>
+
+    </div>
+
+</div>
     </li>
   ));
 
   return (
     <>
-      <div className="w-full bg-gradient-to-r from-orange-500 via-pink-500 to-rose-500 rounded-3xl p-10 mb-10 text-center text-white shadow-2xl">
-        <h1 className="text-5xl font-black">
+      <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
+        <h1 className="text-5xl font-bold text-gray-800">
           🍎 Fresh Fruits Collection
         </h1>
 
-        <p className="mt-4 text-lg text-orange-100">
+        <p className="mt-3 text-gray-500">
           Sweet • Juicy • Naturally Fresh • Farm Picked
         </p>
       </div>

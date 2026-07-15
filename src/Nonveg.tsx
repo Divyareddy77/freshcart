@@ -165,89 +165,99 @@ function Nonveg() {
  let listItems = nonVeg.map((nonveg) => (
   <li
     key={nonveg.id}
-    className=" group relative bg-white rounded-3xl shadow-lg p-6 text-center hover:-translate-y-2 hover:shadow-2xl transition-all 
-    duration-500 border border-red-100 hover:border-red-400">
-    <h2 className="text-3xl font-extrabold text-gray-900 tracking-wide mb-3 group-hover:text-red-600 transition">
-      {nonveg.name}
+    className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+    
+    <div className="px-4 pt-4">
+  <span className="inline-block bg-red-100 text-red-400 text-xs font-semibold px-3 py-1 rounded-md">
+    FARM FRESH
+  </span>
+</div>
+
+    <div className="flex justify-center py-5">
+  <img
+    src={nonveg.imageurl}
+    alt={nonveg.name}
+    className="w-48 h-48 object-contain hover:scale-110 transition duration-300"
+  />
+</div>
+ <div className="flex justify-between items-center px-4">
+
+  <span className="text-red-400 text-xs font-semibold">
+    ⚡ 10 MINS
+  </span>
+
+  <div className="flex items-center gap-1 text-yellow-500 text-sm">
+    <FaStar size={12}/>
+    <span>4.5</span>
+  </div>
+
+</div>
+
+
+
+    <div className="px-4 py-4">
+
+  <h2 className="text-2xl font-bold text-gray-800">
+    {nonveg.name}
+  </h2>
+
+  <p className="text-gray-500 mt-2 h-12">
+    {nonveg.description}
+  </p>
+
+  <div className="flex justify-between items-center mt-5">
+
+    <h2 className="text-3xl font-bold text-red-400">
+      ₹{nonveg.price}
+      <span className="text-base font-medium text-gray-500">
+        /kg
+      </span>
     </h2>
-    <span className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow">
-  Fresh
-</span>
-
-    <div className="h-56 w-full bg-red-50 rounded-2xl overflow-hidden mb-5">
-    <img
-        src={nonveg.imageurl}
-        alt={nonveg.name}
-        className="w-full h-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
-    />
-</div>
-  <div className="flex justify-center gap-1 text-yellow-400 mt-4 mb-4">
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-</div>
-
-
-
-    <div className="space-y-2 mb-5">
-      <p className="text-2xl font-black text-red-600 tracking-wide">
-    ₹{nonveg.price}
-</p>
-
-      <p className="text-gray-500 leading-6">
-        {nonveg.description}
-      </p>
-    </div>
 
     <button
-  onClick={() => {
-    const loggedInUser = JSON.parse(
-      localStorage.getItem("loggedInUser") || "null"
-    );
+      onClick={() => {
+        const loggedInUser = JSON.parse(
+          localStorage.getItem("loggedInUser") || "null"
+        );
 
-    if (!loggedInUser) {
+        if (!loggedInUser) {
+          toast.warning("Please login first!");
 
-      toast.warning("Please login first!");
+          setTimeout(() => {
+            navigate("/login");
+          }, 1500);
 
-      setTimeout(() => {
-        navigate("/login");
-      }, 1500);
+          return;
+        }
 
-      return;
-    }
+        addToCart(nonveg);
 
-    addToCart(nonveg);
+        toast.success(`${nonveg.name} added to cart 🛒`, {
+          autoClose: 2000,
+        });
+      }}
+      className="border-2 border-red-400 text-red-500 font-bold px-7 py-2 rounded-lg hover:bg-red-400 hover:text-white transition"
+    >
+      ADD +
+    </button>
 
-    toast.success(`${nonveg.name} added to cart 🛒`, {
-      autoClose: 2000,
-      position: "top-right",
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "colored",
-    });
-  }}
-  className="w-full py-2.5 rounded-xl font-bold text-white bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 
-  hover:to-orange-600 transition duration-300 shadow-lg hover:scale-105 active:scale-95">
-  🛒 Add To Cart
-</button>
+  </div>
+
+</div>
   </li>
 ));
   return (
     <>
-    <div className="bg-gradient-to-r from-red-700 via-rose-600 to-orange-500 rounded-3xl p-10 mb-10 text-center text-white shadow-2xl">
-  <h1 className="text-5xl font-black">
+    <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
+  <h1 className="text-5xl font-bold text-gray-800">
     🍗 Premium Non-Veg Collection
   </h1>
 
-  <p className="mt-4 text-lg text-red-100">
+  <p className="mt-3 text-gray-500">
     Fresh • Hygienic • Protein Rich • Delivered Chilled
   </p>
 </div>
-      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
+      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
   {listItems}
 </ol>
     </>

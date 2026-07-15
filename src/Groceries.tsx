@@ -164,88 +164,100 @@ function Groceries() {
 let listItems = groceryItems.map((grocery) => (
   <li
     key={grocery.id}
-    className="group relative bg-white rounded-3xl border border-amber-100 shadow-lg overflow-hidden p-6 flex flex-col items-center 
-    transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-orange-300">
-    <h2 className="text-2xl font-black text-gray-800 mb-4 tracking-wide group-hover:text-orange-600 transition">
-      {grocery.name}
-    </h2>
+    className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+    
+    <div className="px-4 pt-4">
+  <span className="inline-block bg-purple-100 text-purple-500 text-xs font-semibold px-3 py-1 rounded-md">
+    DAILY ESSENTIAL
+  </span>
+</div>
 
-    <div className="w-56 h-56 overflow-hidden rounded-2xl mb-5">
+    <div className="flex justify-center py-5">
   <img
     src={grocery.imageurl}
     alt={grocery.name}
-    className="w-full h-full object-cover transition duration-300 hover:scale-105"
+    className="w-48 h-48 object-contain hover:scale-110 transition-transform duration-300"
   />
 </div>
-<div className="flex justify-center gap-1 text-yellow-400 mb-3">
+<div className="flex justify-between items-center px-4">
 
-    <FaStar />
-    <FaStar />
-    <FaStar />
-    <FaStar />
-    <FaStar />
+  <span className="text-purple-500 text-xs font-semibold">
+    ⚡ 10 MINS
+  </span>
+
+  <div className="flex items-center gap-1 text-yellow-500 text-sm">
+    <FaStar size={12}/>
+    <span>4.5</span>
+  </div>
 
 </div>
 
-    <div className="space-y-2 mb-5">
-      <p className="text-4xl font-black text-orange-400">
-        ₹{grocery.price}
-      </p>
+    <div className="px-4 py-4">
 
-      <p className="text-sm text-gray-500 leading-6">
-        {grocery.description}
-      </p>
-    </div>
+  <h2 className="text-2xl font-bold text-gray-800">
+    {grocery.name}
+  </h2>
+
+  <p className="text-gray-500 mt-2 h-12">
+    {grocery.description}
+  </p>
+
+  <div className="flex justify-between items-center mt-5">
+
+    <h2 className="text-3xl font-bold text-purple-400">
+      ₹{grocery.price}
+      <span className="text-base font-medium text-gray-500">
+        /kg
+      </span>
+    </h2>
 
     <button
-  onClick={() => {
-    const loggedInUser = JSON.parse(
-      localStorage.getItem("loggedInUser") || "null"
-    );
+      onClick={() => {
+        const loggedInUser = JSON.parse(
+          localStorage.getItem("loggedInUser") || "null"
+        );
 
-    if (!loggedInUser) {
+        if (!loggedInUser) {
+          toast.warning("Please login first!");
 
-      toast.warning("Please login first!");
+          setTimeout(() => {
+            navigate("/login");
+          }, 1500);
 
-      setTimeout(() => {
-        navigate("/login");
-      }, 1500);
+          return;
+        }
 
-      return;
-    }
+        addToCart(grocery);
 
-    addToCart(grocery);
-    toast.success(`${grocery.name} added to cart 🛒`, {
-      autoClose: 2000,
-      position: "top-right",
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "colored",
-    });
-  }}
-  className="mt-auto w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold 
-  text-lg py-2.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95">
-  🛒 Add To Cart
-</button>
+        toast.success(`${grocery.name} added to cart 🛒`, {
+          autoClose: 2000,
+        });
+      }}
+      className="border-2 border-purple-400 text-purple-500 font-bold px-7 py-2 rounded-lg hover:bg-purple-400 hover:text-white transition"
+    >
+      ADD +
+    </button>
+
+  </div>
+
+</div>
   </li>
 ));
  
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-100 py-10">
-      <div className="max-w-7xl mx-auto mb-12 rounded-3xl bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-500 text-white shadow-2xl px-10 py-12 text-center">
+    <div className="min-h-screen bg-gray-50 py-10 px-6">
+      <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
 
-    <h1 className="text-5xl font-black tracking-wide">
+    <h1 className="text-5xl font-bold text-gray-800">
         🛒 Grocery Essentials
     </h1>
 
-    <p className="mt-4 text-xl text-orange-100">
+    <p className="mt-3 text-gray-500">
         Rice • Flour • Spices • Daily Essentials
     </p>
 
 </div>
-      <ol className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-6">
+      <ol className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-6">
     {listItems}
 </ol>
     </div>
