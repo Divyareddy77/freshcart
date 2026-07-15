@@ -44,16 +44,16 @@ function Navbar() {
           {/* Logo */}
 
           <Link to="/" className="flex items-center gap-4">
-  <div className=" w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-2xl shadow-lg">
+  <div className="w-10 h-10 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-2xl shadow-lg">
     🌿
   </div>
 
   <div>
-    <h1 className="text-3xl font-black text-green-600">
+    <h1 className="text-2xl md:text-3xl font-black">
       FreshCart
     </h1>
 
-    <p className="text-sm text-gray-500">
+    <p className="hidden sm:block text-sm text-gray-500">
       Fresh Everyday
     </p>
   </div>
@@ -61,7 +61,7 @@ function Navbar() {
 
           {/* Desktop Menu */}
 
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="flex flex-col gap-3">
 
             <NavLink to="/" className={({ isActive }) => `px-5 py-2 rounded-xl transition-all duration-300 font-semibold 
             ${isActive ? "bg-green-500 text-white shadow-lg" : "text-gray-700 hover:bg-green-100 hover:text-green-700"}`}>
@@ -97,68 +97,50 @@ function Navbar() {
             </NavLink>
 
           </div>
-          {loggedInUser ? (
-              <>
-                <span className="font-semibold">
-                  Welcome <b>{loggedInUser.name}</b>
-                </span>
+          <div className="hidden lg:flex items-center gap-3">
+  {loggedInUser ? (
+    <>
+      <span className="font-semibold">
+        Welcome <b>{loggedInUser.name}</b>
+      </span>
 
-                <button
-                  onClick={logout}
-                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  to="/login"
-                  className="menu-link"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <FaSignInAlt />
-                  Login
-                </Link>
+      <button
+        onClick={logout}
+        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+      >
+        Logout
+      </button>
+    </>
+  ) : (
+    <>
+      <NavLink
+    to="/Login"
+    onClick={() => setMenuOpen(false)}
+    className={navLinkStyle}
+>
+    <FaSignInAlt className="mr-2" />
+    Login
+</NavLink>
 
-                <Link
-                  to="/register"
-                  className="menu-link"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <FaUserPlus />
-                  Register
-                </Link>
-              </>
-            )}
+<NavLink
+    to="/Register"
+    onClick={() => setMenuOpen(false)}
+    className={navLinkStyle}
+>
+    <FaUserPlus className="mr-2" />
+    Register
+</NavLink>
+    </>
+  )}
+</div>
 
-          {/* Search */}
-
-          {/* <div className="hidden lg:flex items-center bg-gray-100 rounded-full px-4 py-2 w-72">
-
-            <FaSearch className="text-gray-400" />
-
-            <input
-              type="text"
-              placeholder="Search..."
-              className="bg-transparent outline-none px-3 w-full"
-            />
-
-          </div> */}
+          
 
           {/* Icons */}
 
           <div className="hidden lg:flex items-center gap-4">
 
-           {/*  <button className="relative hover:text-red-500 transition text-xl">
-
-              <FaHeart />
-
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] rounded-full h-5 w-5 flex items-center justify-center">
-                2
-              </span>
-
-            </button> */}
+           
 
             <Link to="/Cart" className=" relative w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center hover:bg-green-500 
             hover:text-white transition-all duration-300 shadow-md">
@@ -171,13 +153,7 @@ function Navbar() {
 
             </Link>
 
-            {/* <button className=" w-12 h-12 rounded-2xl bg-gray-100 flex items-center justify-center text-2xl hover:bg-green-500 hover:text-white 
-            transition-all duration-300 shadow-md">
-
-              <FaUserCircle />
-
-            </button> */}
-
+            
           </div>
 
           {/* Mobile Button */}
@@ -245,6 +221,40 @@ function Navbar() {
               >
                 Non-Veg
               </NavLink>
+              <div className="hidden lg:flex items-center gap-3">
+  {loggedInUser ? (
+    <>
+      <span className="font-semibold">
+        Welcome <b>{loggedInUser.name}</b>
+      </span>
+
+      <button
+        onClick={logout}
+        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+      >
+        Logout
+      </button>
+    </>
+  ) : (
+    <>
+      <Link
+        to="/Login"
+        className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-green-100"
+      >
+        <FaSignInAlt />
+        Login
+      </Link>
+
+      <Link
+        to="/Register"
+        className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-green-100"
+      >
+        <FaUserPlus />
+        Register
+      </Link>
+    </>
+  )}
+</div>
 
               <div className="flex items-center bg-gray-100 rounded-full px-4 py-3 mt-3">
 
